@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dUp2BOlFbfusvSPBAPk2U441Zg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../tutorials/spring-data-rest" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\GitHub\javaa\AbyCash\AbyCash\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Application" />
+      <module name="AbyCash" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="" />
+      <created>1592489316959</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592489316959</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1592501289436">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592501289436" />
+    <state width="1323" height="449" key="GridCell.Tab.0.bottom" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state width="1323" height="449" key="GridCell.Tab.0.center" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state width="1323" height="449" key="GridCell.Tab.0.left" timestamp="1592508660392">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592508660392" />
+    <state width="1323" height="449" key="GridCell.Tab.0.right" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state width="1323" height="449" key="GridCell.Tab.1.bottom" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state width="1323" height="449" key="GridCell.Tab.1.center" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state width="1323" height="449" key="GridCell.Tab.1.left" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state width="1323" height="449" key="GridCell.Tab.1.right" timestamp="1592508660393">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="449" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1592508660393" />
+    <state x="213" y="24" key="Maven.ArtifactSearchDialog" timestamp="1592494183955">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="213" y="24" key="Maven.ArtifactSearchDialog/0.0.1366.738@0.0.1366.738" timestamp="1592494183955" />
+  </component>
+</project>
