@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="connect to db success but still crushing&#10;ConditionEvaluationReportLoggingListener Error">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/entities/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/services/UserServiceImpl.java" afterDir="false" />
+    <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DefaultDataBase.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/SpringConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/config/SpringConfigurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/entities/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/config/SpringConfigurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/config/SpringConfigurations.class" afterDir="false" />
@@ -33,12 +30,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1dUp2BOlFbfusvSPBAPk2U441Zg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/dialect" />
@@ -94,55 +95,64 @@
       <option name="project" value="LOCAL" />
       <updated>1592517325706</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="connection done">
+      <created>1592561960676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592561960676</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="connect to db success but still crushing" />
     <MESSAGE value="connect to db success but still crushing&#10;ConditionEvaluationReportLoggingListener Error" />
-    <option name="LAST_COMMIT_MESSAGE" value="connect to db success but still crushing&#10;ConditionEvaluationReportLoggingListener Error" />
+    <MESSAGE value="connection done" />
+    <option name="LAST_COMMIT_MESSAGE" value="connection done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592515448190">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1592515448190" />
-    <state x="445" y="172" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592510589690">
+    <state x="445" y="172" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592566909778">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="445" y="172" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1592510589690" />
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1592561041649">
+    <state x="445" y="172" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1592566909778" />
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1592567610094">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592561041649" />
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592567610094" />
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592512164485">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1592512164485" />
-    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592517323298">
+    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592561958029">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592517323298" />
+    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592561958029" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1592501289436">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592501289436" />
-    <state width="1323" height="65" key="GridCell.Tab.0.bottom" timestamp="1592561623169">
+    <state width="1323" height="450" key="GridCell.Tab.0.bottom" timestamp="1592567995549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592561623169" />
-    <state width="1323" height="65" key="GridCell.Tab.0.center" timestamp="1592561623169">
+    <state width="1323" height="450" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592567995549" />
+    <state width="1323" height="450" key="GridCell.Tab.0.center" timestamp="1592567995549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592561623169" />
-    <state width="1323" height="65" key="GridCell.Tab.0.left" timestamp="1592561623169">
+    <state width="1323" height="450" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592567995549" />
+    <state width="1323" height="450" key="GridCell.Tab.0.left" timestamp="1592567995549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592561623169" />
-    <state width="1323" height="65" key="GridCell.Tab.0.right" timestamp="1592561623169">
+    <state width="1323" height="450" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592567995549" />
+    <state width="1323" height="450" key="GridCell.Tab.0.right" timestamp="1592567995549">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="65" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592561623169" />
+    <state width="1323" height="450" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592567995549" />
     <state width="1323" height="450" key="GridCell.Tab.1.bottom" timestamp="1592556895198">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -167,9 +177,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1592515438252" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592517328205">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592561963872">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592517328205" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592561963872" />
   </component>
 </project>

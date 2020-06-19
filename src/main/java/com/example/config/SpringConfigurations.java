@@ -10,7 +10,7 @@ import java.sql.Connection;
 @Configuration
 public class SpringConfigurations {
 
-    @Bean
+    /*@Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         String path = "G:/UNIVER/DataBaseOfAbilityCash.sqlite";
@@ -24,5 +24,5 @@ public class SpringConfigurations {
         } finally {
             return dataSource;
         }
-    }
+    }*/
 }

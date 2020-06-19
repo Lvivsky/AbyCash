@@ -13,4 +13,13 @@ public class Users {
     private String changed;
     private String deleted;
     private String login;
+
+    public Users(String name) {
+        this.login=name;
+    }
+
+    @Override
+    public String toString() {
+        return "name = " + login;
+    }
 }
