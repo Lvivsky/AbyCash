@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.entities.Users;
+import com.example.models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package com.example.entities;
+package com.example.models;
 
 import javax.persistence.*;
 
@@ -12,6 +12,7 @@ public class Users {
     private String guid;
     private String changed;
     private String deleted;
+
     private String login;
 
     public Users(String name) {
@@ -20,6 +21,6 @@ public class Users {
 
     @Override
     public String toString() {
-        return "name = " + login;
+        return "name = " + login + "\n" + guid;
     }
 }

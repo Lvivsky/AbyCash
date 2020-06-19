@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Classifiers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Currencies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/CurrencyRates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/DataSeries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/DataSeriesAccountFilters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/DataSeriesCategoryFilters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/InterfacePages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Properties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/TransactionCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/TransactionGroups.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Transactions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/config/SpringConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/config/SpringConfigurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/config/SpringConfigurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/config/SpringConfigurations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592568120444</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="(frontend)&#10;add navbar classification">
+      <created>1592597137345</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592597137345</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -117,7 +142,8 @@
     <MESSAGE value="connect to db success but still crushing&#10;ConditionEvaluationReportLoggingListener Error" />
     <MESSAGE value="connection done" />
     <MESSAGE value="fix database&#10;add default database&#10;add bootstrap 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix database&#10;add default database&#10;add bootstrap 4" />
+    <MESSAGE value="(frontend)&#10;add navbar classification" />
+    <option name="LAST_COMMIT_MESSAGE" value="(frontend)&#10;add navbar classification" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1592597010399">
@@ -132,38 +158,38 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="445" y="172" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1592566909778" />
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1592567610094">
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1592606777050">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592567610094" />
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592606777050" />
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592512164485">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1592512164485" />
-    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592568118582">
+    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592597136021">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592568118582" />
+    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592597136021" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1592501289436">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592501289436" />
-    <state width="1323" height="180" key="GridCell.Tab.0.bottom" timestamp="1592596677289">
+    <state width="1323" height="250" key="GridCell.Tab.0.bottom" timestamp="1592607033644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="180" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592596677289" />
-    <state width="1323" height="180" key="GridCell.Tab.0.center" timestamp="1592596677289">
+    <state width="1323" height="250" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592607033644" />
+    <state width="1323" height="250" key="GridCell.Tab.0.center" timestamp="1592607033643">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="180" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592596677289" />
-    <state width="1323" height="180" key="GridCell.Tab.0.left" timestamp="1592596677289">
+    <state width="1323" height="250" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592607033643" />
+    <state width="1323" height="250" key="GridCell.Tab.0.left" timestamp="1592607033643">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="180" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592596677289" />
-    <state width="1323" height="180" key="GridCell.Tab.0.right" timestamp="1592596677289">
+    <state width="1323" height="250" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592607033643" />
+    <state width="1323" height="250" key="GridCell.Tab.0.right" timestamp="1592607033644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="180" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592596677289" />
+    <state width="1323" height="250" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592607033644" />
     <state width="1323" height="92" key="GridCell.Tab.1.bottom" timestamp="1592576525318">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -188,9 +214,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1592515438252" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592568153925">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592597147740">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592568153925" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592597147740" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1592604678096">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1592604678096" />
   </component>
 </project>
