@@ -8,6 +8,9 @@
     <artifactId>AbyCash</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
     <!-- PARENT -->
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -32,23 +35,7 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
         <!-- DataBase support -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-rest</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -58,6 +45,10 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.25.2</version>
         </dependency>
+
+
+
+
     </dependencies>
 
     <build>
@@ -68,9 +59,5 @@
             </plugin>
         </plugins>
     </build>
-
-        <properties>
-            <maven.version>1.0</maven.version>
-        </properties>
 
     </project>
