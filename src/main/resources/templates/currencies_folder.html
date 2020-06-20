@@ -25,8 +25,8 @@
         <tbody>
             <div th:each="element : ${currencies}">
                 <tr>
-                    <td class="row"><span th:text="${element.name}"/><td/>
-                    <td><span th:text="${element.code}"/><td/>
+                    <td scope="row"><span th:text="${element.name}"/><td/>
+                    <td scope="row"><span th:text="${element.code}"/><td/>
                 </tr>
             </div>
         </tbody>

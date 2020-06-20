@@ -13,39 +13,16 @@
 <body>
 <div th:insert="fragments/header :: header"></div>
 
-<div class="container mt-5">
-    <div>
-        <div th:each="el : ${users}" class="alert alert-info mt-2">
-            <h3 th:text="${el.guid}"/>
-            <h3 th:text="${el.changed}"/>
-            <h3 th:text="${el.deleted}"/>
-            <h3 th:text="${el.login}"/>
-        </div>
-    </div>
+<div class="container">
+    <form action="/articles_folder/add" method="post">
+        <label for="addName">Назва</label>
+        <input type="text" name="name" class="form-control" id="addName" placeholder="category name"/>
+        <label for="addComment">Опис</label>
+        <input type="tel" name="comment" class="form-control" id="addComment" placeholder="description"/>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
 </div>
 
-<div class="container mt-3">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Назва рахунку</th>
-            <th scope="col">Залишок</th>
-            <th scope="col">Валюта</th>
-            <th scope="col">Коментарій</th>
-        </tr>
-        </thead>
-        <tbody>
-            <div th:each="element : ${accounts}">
-                <tr>
-                    <td scope="row"><span th:text="${element.name}" /><td/>
-                    <td scope="row"><span th:text="${element.startingBalance}"/><td/>
-                    <td scope="row"><span th:text="${element.currency}"/><td/>
-                    <td scope="row"><span th:text="${element.comment}"/><td/>
-                </tr>
-            </div>
-        </tbody>
-    </table>
-</div>
 
 
 <!-- Optional JavaScript -->

@@ -1,21 +1,34 @@
 package com.example.models;
 
 import javax.persistence.*;
+import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Table(name = "Categories")
 public class Categories {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String guid;
-    private String changed;
+    private long changed;
     private String deleted;
 
     private String name;
     private String comment;
-    private String parent;
+    private int parent;
+
+    public Categories() {}
+    public Categories(String name, String comment, int parent) {
+        this.guid = "0";
+        this.changed = Instant.now().getEpochSecond();
+        this.deleted = "0";
+        this.name = name;
+        this.comment = comment;
+        this.parent = parent;
+    }
+
 
     public int getId() {
         return id;
@@ -33,11 +46,11 @@ public class Categories {
         this.guid = guid;
     }
 
-    public String getChanged() {
+    public long getChanged() {
         return changed;
     }
 
-    public void setChanged(String changed) {
+    public void setChanged(long changed) {
         this.changed = changed;
     }
 
@@ -65,11 +78,11 @@ public class Categories {
         this.comment = comment;
     }
 
-    public String getParent() {
+    public int getParent() {
         return parent;
     }
 
-    public void setParent(String parent) {
+    public void setParent(int parent) {
         this.parent = parent;
     }
 }

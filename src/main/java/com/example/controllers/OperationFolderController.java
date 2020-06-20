@@ -15,19 +15,10 @@ public class OperationFolderController {
 
     @GetMapping("/operation_folder")
     public String index(Model model) {
-        Iterable<Users> users = usersRepo.findAll();
-        try {
-            model.addAttribute("users", users);
-            Users u = usersRepo.findById(1).get();
-            model.addAttribute("loginUser", u.getLogin());
-            System.out.println("моделька працює");
-        } catch (Exception e) {
-            System.out.println("неможливо добавити нову модельку((");
-        } finally {
-            for (Users e: users) {
-                System.out.println(e.toString());
-            }
-        }
+        model.addAttribute("loginUser", usersRepo.findById(1).get().getLogin());
+
+
+
         return "operation_folder";
     }
 }

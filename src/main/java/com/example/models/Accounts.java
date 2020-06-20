@@ -11,13 +11,13 @@ public class Accounts {
     private int id;
     private String guid;
     private String changed;
-    private boolean deleted;
+    private String deleted;
 
     private String name;
-    private double starting_balance;
-    private Integer currency;
+    private String startingBalance;
+    private String currency;
     private String comment;
-    private boolean locked;
+    private String locked;
 
     public int getId() {
         return id;
@@ -43,11 +43,11 @@ public class Accounts {
         this.changed = changed;
     }
 
-    public boolean isDeleted() {
+    public String getDeleted() {
         return deleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(String deleted) {
         this.deleted = deleted;
     }
 
@@ -59,19 +59,19 @@ public class Accounts {
         this.name = name;
     }
 
-    public double getStarting_balance() {
-        return starting_balance;
+    public String getStartingBalance() {
+        return startingBalance;
     }
 
-    public void setStarting_balance(double starting_balance) {
-        this.starting_balance = starting_balance;
+    public void setStartingBalance(String startingBalance) {
+        this.startingBalance = startingBalance;
     }
 
-    public Integer getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(Integer currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 
@@ -83,11 +83,11 @@ public class Accounts {
         this.comment = comment;
     }
 
-    public boolean isLocked() {
+    public String getLocked() {
         return locked;
     }
 
-    public void setLocked(boolean locked) {
+    public void setLocked(String locked) {
         this.locked = locked;
     }
 }

@@ -22,13 +22,10 @@ public class AccountFolderController {
     public String index(Model model) {
         model.addAttribute("loginUser", usersRepo.findById(1).get().getLogin());
 
-        Iterable<Accounts> accounts = null;
         try {
-            accounts = accountsRepo.findAll();
+            Iterable<Accounts> accounts = accountsRepo.findAll();
         } catch (Exception e) {
             System.out.println("шось не так! " + e.getMessage());
-        } finally {
-            model.addAttribute("accounts", accounts);
         }
 
         return "accounts_folder";
