@@ -43,12 +43,12 @@ public class ArticlesFolderController {
             @RequestParam String name,
             @RequestParam String comment,
             Model model) {
-/*
+
         System.out.println(name);
         System.out.println(comment);
         Categories categories = new Categories(name, comment, 2);
-        categoriesRepo.save(categories);*/
-        categoriesRepo.i();
+        categoriesRepo.save(categories);
+//        categoriesRepo.i();
         return "articles_folder";
     }
 

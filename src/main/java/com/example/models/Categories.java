@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Categories {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String guid;
     private long changed;
@@ -21,7 +21,7 @@ public class Categories {
 
     public Categories() {}
     public Categories(String name, String comment, int parent) {
-        this.guid = "0";
+        this.guid = UUID.randomUUID().toString();
         this.changed = Instant.now().getEpochSecond();
         this.deleted = "0";
         this.name = name;
