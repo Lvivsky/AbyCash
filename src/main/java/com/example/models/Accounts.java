@@ -1,7 +1,6 @@
 package com.example.models;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "Accounts")
@@ -10,12 +9,12 @@ public class Accounts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private UUID guid;
+    private String guid;
     private String changed;
     private boolean deleted;
 
     private String name;
-    private double startingBalance;
+    private double starting_balance;
     private Integer currency;
     private String comment;
     private boolean locked;
@@ -28,11 +27,11 @@ public class Accounts {
         this.id = id;
     }
 
-    public UUID getGuid() {
+    public String getGuid() {
         return guid;
     }
 
-    public void setGuid(UUID guid) {
+    public void setGuid(String guid) {
         this.guid = guid;
     }
 
@@ -60,12 +59,12 @@ public class Accounts {
         this.name = name;
     }
 
-    public double getStartingBalance() {
-        return startingBalance;
+    public double getStarting_balance() {
+        return starting_balance;
     }
 
-    public void setStartingBalance(double startingBalance) {
-        this.startingBalance = startingBalance;
+    public void setStarting_balance(double starting_balance) {
+        this.starting_balance = starting_balance;
     }
 
     public Integer getCurrency() {

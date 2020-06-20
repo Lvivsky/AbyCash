@@ -1,6 +1,8 @@
 package com.example.controllers;
 
+import com.example.models.Accounts;
 import com.example.models.Users;
+import com.example.repositories.AccountsRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,21 +15,22 @@ public class AccountFolderController {
     @Autowired
     private UsersRepo usersRepo;
 
+    @Autowired
+    private AccountsRepo accountsRepo;
+
     @GetMapping("/accounts_folder")
     public String index(Model model) {
-        Iterable<Users> users = usersRepo.findAll();
+        model.addAttribute("loginUser", usersRepo.findById(1).get().getLogin());
+
+        Iterable<Accounts> accounts = null;
         try {
-            model.addAttribute("users", users);
-            Users u = usersRepo.findById(1).get();
-            model.addAttribute("loginUser", u.getLogin());
-            System.out.println("моделька працює");
+            accounts = accountsRepo.findAll();
         } catch (Exception e) {
-            System.out.println("неможливо добавити нову модельку((");
+            System.out.println("шось не так! " + e.getMessage());
         } finally {
-            for (Users e: users) {
-                System.out.println(e.toString());
-            }
+            model.addAttribute("accounts", accounts);
         }
+
         return "accounts_folder";
     }
 }
