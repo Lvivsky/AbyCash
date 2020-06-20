@@ -1,7 +1,7 @@
 package com.example.services;
 
 import com.example.models.Users;
-import com.example.repositories.UserRepo;
+import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepo userRepo;
+    private UsersRepo userRepo;
 
     @Override
     public Iterable<Users> findAll() {

@@ -1,0 +1,70 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <header style="font-family:Verdana !important">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #6c757d;">
+            <a class="navbar-brand" href="#">AbyCash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown ml-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Файл</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                            Відкрити</a>
+                        <a class="dropdown-item" href="#">Зберегти</a>
+                        <a class="dropdown-item" href="#">Зберегти як</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">info</a>
+                    </div>
+                </li>
+                <li class="nav-item active ml-5">
+                    <a class="nav-link" href="#">Рахунки<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active ml-2">
+                    <a class="nav-link" href="#">Операції<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active ml-2">
+                    <a class="nav-link" href="#">Звіти<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active ml-2">
+                    <a class="nav-link" href="#">Валюти<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active ml-2">
+                    <a class="nav-link" href="#">Статті<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <span class="navbar-text mr-5">валюта: 0</span>
+            <span class="navbar-text mr-5">user: default</span>
+        </nav>
+    </header>
+
+
+    <!-- begin OPEN modal form -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload Data Base</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- HERE MUST BE ERRORS (in future) -->
+                    <input class="mb-3" type="file" id="fileUpload" accept=".sqlite,.db,.cash"/><br/>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="submit" class="btn btn-info" id="submit" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end OPEN modal form -->
+
+</div>
