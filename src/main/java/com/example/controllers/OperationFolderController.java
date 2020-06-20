@@ -1,8 +1,6 @@
 package com.example.controllers;
 
-import com.example.models.Accounts;
 import com.example.models.Users;
-import com.example.repositories.AccountsRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,13 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class GreetingController {
+public class OperationFolderController {
 
     @Autowired
     private UsersRepo usersRepo;
 
-    @GetMapping("/")
-    public String greeting(Model model) {
+    @GetMapping("/operation_folder")
+    public String index(Model model) {
         Iterable<Users> users = usersRepo.findAll();
         try {
             model.addAttribute("users", users);
@@ -30,6 +28,6 @@ public class GreetingController {
                 System.out.println(e.toString());
             }
         }
-        return "greeting";
+        return "operation_folder";
     }
 }

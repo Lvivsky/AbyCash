@@ -14,6 +14,11 @@ public class Users {
     private String deleted;
     private String login;
 
+    @Override
+    public String toString() {
+        return login;
+    }
+
     public int getId() {
         return id;
     }
@@ -54,18 +59,4 @@ public class Users {
         this.login = login;
     }
 
-    public Users() {}
-    public Users(String name) {
-        this.login=name;
-    }
-
-    @Override
-    public String toString() {
-        return "name = " + login
-                + "\nId = " + id
-                + "\nGuid = " + guid
-                + "\nChanged = " + changed
-                + "\nDeleted = " + deleted
-                + "\n=========================";
-    }
 }

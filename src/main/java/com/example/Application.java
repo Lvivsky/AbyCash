@@ -21,11 +21,6 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("data base connection success ! ..............");
-        jdbcTemplate.execute("SELECT * FROM Users");
-        //jdbcTemplate.execute("insert into Users values(10,'f','f','f','fofofo')");
 
-        List<Users> users = jdbcTemplate.query("SELECT * FROM Users",
-                (resultSet, rowNum) -> new Users(resultSet.getString("Login")));
-        users.forEach(System.out::println);
     }
 }

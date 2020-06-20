@@ -13,16 +13,7 @@
 <body>
 <div th:insert="fragments/header :: header"></div>
 
-<div class="container mt-5">
-    <div>
-        <div th:each="el : ${users}" class="alert alert-info mt-2">
-            <h3 th:text="${el.guid}"/>
-            <h3 th:text="${el.changed}"/>
-            <h3 th:text="${el.deleted}"/>
-            <h3 th:text="${el.login}"/>
-        </div>
-    </div>
-</div>
+<h5>Operations</h5>
 
 
 <!-- Optional JavaScript -->

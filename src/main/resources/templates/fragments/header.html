@@ -2,7 +2,7 @@
 
     <header style="font-family:Verdana !important">
         <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #6c757d;">
-            <a class="navbar-brand" href="#">AbyCash</a>
+            <a class="navbar-brand" href="/">AbyCash</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -15,32 +15,32 @@
                             Відкрити</a>
                         <a class="dropdown-item" href="#">Зберегти</a>
                         <a class="dropdown-item" href="#">Зберегти як</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">info</a>
                     </div>
                 </li>
                 <li class="nav-item active ml-5">
-                    <a class="nav-link" href="#">Рахунки<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/accounts_folder">Рахунки<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-2">
-                    <a class="nav-link" href="#">Операції<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/operation_folder">Операції<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-2">
-                    <a class="nav-link" href="#">Звіти<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/reports_folder">Звіти<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-2">
-                    <a class="nav-link" href="#">Валюти<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/currencies_folder">Валюти<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-2">
-                    <a class="nav-link" href="#">Статті<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/articles_folder">Статті<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <span class="navbar-text mr-5">валюта: 0</span>
-            <span class="navbar-text mr-5">user: default</span>
+            <span class="navbar-text mr-5">
+                user: <span th:text="${loginUser}"/>
+            </span>
         </nav>
     </header>
 
