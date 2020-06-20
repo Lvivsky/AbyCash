@@ -1,7 +1,6 @@
 package com.example.controllers;
 
 import com.example.models.Categories;
-import com.example.models.Users;
 import com.example.repositories.CategoriesRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +47,7 @@ public class ArticlesFolderController {
         System.out.println(comment);
         Categories categories = new Categories(name, comment, 2);
         categoriesRepo.save(categories);
-//        categoriesRepo.i();
-        return "articles_folder";
+        return "redirect:/articles_folder";
     }
 
 }

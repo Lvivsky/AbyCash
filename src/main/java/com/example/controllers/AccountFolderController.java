@@ -24,9 +24,12 @@ public class AccountFolderController {
 
         try {
             Iterable<Accounts> accounts = accountsRepo.findAll();
+            model.addAttribute("accounts", accounts);
         } catch (Exception e) {
             System.out.println("шось не так! " + e.getMessage());
+            e.printStackTrace();
         }
+
 
         return "accounts_folder";
     }

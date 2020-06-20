@@ -14,7 +14,9 @@ public class Accounts {
     private String deleted;
 
     private String name;
-    private String startingBalance;
+
+    private String startingbalance;
+
     private String currency;
     private String comment;
     private String locked;
@@ -59,12 +61,12 @@ public class Accounts {
         this.name = name;
     }
 
-    public String getStartingBalance() {
-        return startingBalance;
+    public String getStartingbalance() {
+        return startingbalance;
     }
 
-    public void setStartingBalance(String startingBalance) {
-        this.startingBalance = startingBalance;
+    public void setStartingbalance(String startingbalance) {
+        this.startingbalance = startingbalance;
     }
 
     public String getCurrency() {

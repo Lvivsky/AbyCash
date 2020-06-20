@@ -1,25 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/CategoriesRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/addCategory.html" afterDir="false" />
+    <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="Accounts display fix">
+      <change afterPath="$PROJECT_DIR$/memory:myDb?cache=shared" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DefaultDataBase.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DefaultDataBase.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/AccountFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AccountFolderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/ArticlesFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/ArticlesFolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/OperationFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/OperationFolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/ReportsFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/ReportsFolderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/models/Accounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Accounts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/models/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/models/Categories.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/accounts_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/accounts_folder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles_folder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/currencies_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/currencies_folder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reports_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reports_folder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/AbyCash.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/config/SpringConfigurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/config/SpringConfigurations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/controllers/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/controllers/GreetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dialect/SqliteDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dialect/SqliteDialect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dialect/SqliteIdentityColumnSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dialect/SqliteIdentityColumnSupport.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DefaultDataBase" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DefaultDataBase" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DefaultDataBase" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="DefaultDataBase" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="Accounts: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - DefaultDataBase.sqlite" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -31,6 +76,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1dUp2BOlFbfusvSPBAPk2U441Zg" />
   <component name="ProjectLevelVcsManager">
@@ -63,7 +109,7 @@
       <recent name="G:\GitHub\real\AbyCash\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Application" />
       <module name="AbyCash" />
@@ -74,6 +120,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="AbyCash" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592655993434</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Category add fix">
+      <created>1592689025676</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592689025676</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -168,7 +228,9 @@
     <MESSAGE value="(backend)&#10;thats the progress&#10;add show table in view" />
     <MESSAGE value="add navigation in view" />
     <MESSAGE value="view currencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="view currencies" />
+    <MESSAGE value="Category add fix" />
+    <MESSAGE value="Accounts display fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Accounts display fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Project_Structure" timestamp="1592597010399">
@@ -195,58 +257,84 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1592650680838" />
-    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592655991741">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="1807" y="-300" key="CommitChangelistDialog2" timestamp="1592691934106">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592655991741" />
+    <state x="1807" y="-300" key="CommitChangelistDialog2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934106" />
+    <state x="1620" y="-274" key="DiffContextDialog" timestamp="1592688986246">
+      <screen x="1440" y="-300" width="1920" height="1200" />
+    </state>
+    <state x="1620" y="-274" key="DiffContextDialog/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592688986246" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1592501289436">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592501289436" />
-    <state width="1323" height="242" key="GridCell.Tab.0.bottom" timestamp="1592682095652">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="441" key="GridCell.Tab.0.bottom" timestamp="1592691934174">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="242" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592682095652" />
-    <state width="1323" height="242" key="GridCell.Tab.0.center" timestamp="1592682095651">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="441" key="GridCell.Tab.0.bottom/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934174" />
+    <state width="1878" height="466" key="GridCell.Tab.0.bottom/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772623" />
+    <state width="1878" height="441" key="GridCell.Tab.0.center" timestamp="1592691934171">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="242" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592682095651" />
-    <state width="1323" height="242" key="GridCell.Tab.0.left" timestamp="1592682095651">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="441" key="GridCell.Tab.0.center/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934171" />
+    <state width="1878" height="466" key="GridCell.Tab.0.center/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772619" />
+    <state width="1878" height="441" key="GridCell.Tab.0.left" timestamp="1592691934169">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="242" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592682095651" />
-    <state width="1323" height="242" key="GridCell.Tab.0.right" timestamp="1592682095652">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="441" key="GridCell.Tab.0.left/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934169" />
+    <state width="1878" height="466" key="GridCell.Tab.0.left/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772617" />
+    <state width="1878" height="441" key="GridCell.Tab.0.right" timestamp="1592691934173">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="242" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592682095652" />
-    <state width="1323" height="364" key="GridCell.Tab.1.bottom" timestamp="1592613149210">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="441" key="GridCell.Tab.0.right/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934173" />
+    <state width="1878" height="466" key="GridCell.Tab.0.right/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772621" />
+    <state width="1878" height="423" key="GridCell.Tab.1.bottom" timestamp="1592688029326">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="364" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592613149210" />
-    <state width="1323" height="364" key="GridCell.Tab.1.center" timestamp="1592613149209">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="423" key="GridCell.Tab.1.bottom/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592688029326" />
+    <state width="1878" height="423" key="GridCell.Tab.1.center" timestamp="1592688029322">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="364" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1592613149209" />
-    <state width="1323" height="364" key="GridCell.Tab.1.left" timestamp="1592613149209">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="423" key="GridCell.Tab.1.center/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592688029322" />
+    <state width="1878" height="423" key="GridCell.Tab.1.left" timestamp="1592688029320">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="364" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1592613149209" />
-    <state width="1323" height="364" key="GridCell.Tab.1.right" timestamp="1592613149209">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state width="1878" height="423" key="GridCell.Tab.1.left/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592688029320" />
+    <state width="1878" height="423" key="GridCell.Tab.1.right" timestamp="1592688029324">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state width="1323" height="364" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1592613149209" />
+    <state width="1878" height="423" key="GridCell.Tab.1.right/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592688029324" />
     <state x="213" y="24" key="Maven.ArtifactSearchDialog" timestamp="1592494183955">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="213" y="24" key="Maven.ArtifactSearchDialog/0.0.1366.738@0.0.1366.738" timestamp="1592494183955" />
+    <state x="2221" y="18" key="RollbackChangesDialog" timestamp="1592689068424">
+      <screen x="1440" y="-300" width="1920" height="1200" />
+    </state>
+    <state x="2221" y="18" key="RollbackChangesDialog/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592689068424" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1592610651878">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1592610651878" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592655996142">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="1827" y="-134" key="Vcs.Push.Dialog.v2" timestamp="1592689591152">
+      <screen x="1440" y="-300" width="1920" height="1200" />
     </state>
     <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592655996142" />
+    <state x="1827" y="-134" key="Vcs.Push.Dialog.v2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592689591152" />
+    <state x="2205" y="224" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592688910268">
+      <screen x="1440" y="-300" width="1920" height="1200" />
+    </state>
+    <state x="2205" y="224" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592688910268" />
     <state x="0" y="0" width="737" height="738" key="find.popup" timestamp="1592608437576">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
