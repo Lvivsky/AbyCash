@@ -13,14 +13,20 @@
 <body>
 <div th:insert="fragments/header :: header"></div>
 
-<div class="container">
-    <form method="post">
-        <label for="addName">Назва</label>
-        <input type="text" name="name" class="form-control" id="addName" placeholder="category name"/>
-        <label for="addComment">Опис</label>
-        <input type="tel" name="comment" class="form-control" id="addComment" placeholder="description"/>
-        <button type="submit" class="btn btn-info">Submit</button>
-    </form>
+<div class="container mt-5" style="width:1100px;">
+    <div class="d-flex justify-content-center">
+        <form method="post">
+            <h2>Додати категорію</h2>
+            <label class="mt-3" for="addName">Назва</label>
+            <input type="text" name="name" class="form-control" id="addName" placeholder="category name"/>
+            <label class="mt-2" for="addComment">Опис</label>
+            <input type="tel" name="comment" class="form-control" id="addComment" placeholder="description"/>
+            <div class="d-flex justify-content-center">
+                <a href="/articles_folder" class="btn btn-secondary mt-3"> Назад </a>
+                <button type="submit" class="btn btn-success mt-3 ml-3">Зберегти</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 

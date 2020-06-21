@@ -14,6 +14,21 @@
 <div th:insert="fragments/header :: header"></div>
 
 <div class="container mt-5">
+        <form>
+            <div class="row d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <input type="text" class="form-control is-valid mr-1" placeholder="Назва рахунку"/>
+                    <input type="text" class="form-control is-valid mr-1" placeholder="Початковий баланс"/>
+                    <input type="text" class="form-control is-valid mr-1" placeholder="Валюта"/>
+                    <input type="text" class="form-control is-valid mr-1" placeholder="Опис"/>
+                    <button class="btn btn-success" type="submit">Додати рахунок</button>
+                </div>
+            </div>
+        </form>
+</div>
+
+
+<div class="container mt-5">
     <div>
         <div th:each="el : ${users}" class="alert alert-info mt-2">
             <h3 th:text="${el.guid}"/>
@@ -25,22 +40,34 @@
 </div>
 
 <div class="container mt-3">
-    <table class="table table-striped">
+    <table class="table table-sm table-bordered table-striped">
         <thead>
         <tr>
-            <th scope="col">Назва рахунку</th>
-            <th scope="col">Залишок</th>
-            <th scope="col">Валюта</th>
-            <th scope="col">Коментарій</th>
+            <th>Назва рахунку</th>
+            <th>Залишок</th>
+            <th>Валюта</th>
+            <th>опис</th>
+            <th style="width:1%"></th>       <!--     // lock would be here -->
+            <th style="width:1%"></th>     <!--                        -->
         </tr>
         </thead>
         <tbody>
             <div th:each="element : ${accounts}">
                 <tr>
-                    <td scope="row"><span th:text="${element.name}" /><td/>
-                    <td scope="row"><span th:text="${element.startingbalance}"/><td/>
-                    <td scope="row"><span th:text="${element.currency}"/><td/>
-                    <td scope="row"><span th:text="${element.comment}"/><td/>
+                    <td th:text="${element.name}"/>
+                    <td th:text="${element.startingbalance}"/>
+                    <td th:text="${element.currency}"/>
+                    <td th:text="${element.comment}"/>
+                    <td>
+                        <form>
+                            <button class="btn btn-warning btn-sm">редагувати</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form>
+                            <button class="btn btn-danger btn-sm">видалити</button>
+                        </form>
+                    </td>
                 </tr>
             </div>
         </tbody>
