@@ -29,12 +29,16 @@
                     <tr th:each="element : ${incomeCategory}">
                         <td style="width:25%" th:text="${element.name}"/>
                         <td style="width:50%" th:text="${element.comment}"/>
-                        <td style="width:20px" ><a class="text-warning" href="#">редагувати</a></td>
+                        <td style="width:20px" >
+                            <a class="text-warning" th:href="'/articles_folder/' + ${element.id} + '/edit'">
+                                редагувати
+                            </a>
+                        </td>
                         <td style="width:20px"><a class="text-danger" href="#">видалити</a></td>
                     </tr>
                     </tbody>
                 </table>
-                <a class="font-weight-light ml-3" style="font-size:14px" href="#">додати категорію</a>
+                <a class="font-weight-light ml-3" style="font-size:14px" href="/articles_folder/1/add">додати категорію</a>
             </form>
     <form>
         <h5>Всі статті витрат</h5>
@@ -51,12 +55,20 @@
             <tr th:each="element : ${outcomeCategory}">
                 <td style="width:25%" th:text="${element.name}"/>
                 <td style="width:50%" th:text="${element.comment}"/>
-                <td style="width:20px" ><a class="text-warning" href="#">редагувати</a></td>
-                <td  style="width:20px"><a class="text-danger" href="#">видалити</a></td>
+                <td style="width:20px" >
+                    <a class="text-warning" th:href="'/articles_folder/' + ${element.id} + '/edit'">
+                        редагувати
+                    </a>
+                </td>
+                <td  style="width:20px">
+                    <a class="text-danger" href="#">
+                        видалити
+                    </a>
+                </td>
             </tr>
             </tbody>
         </table>
-        <a class="font-weight-light ml-3" style="font-size:14px" href="/articles_folder/add" >додати категорію</a>
+        <a class="font-weight-light ml-3" style="font-size:14px" href="/articles_folder/2/add" >додати категорію</a>
     </form>
 </div>
 </div>

@@ -14,13 +14,18 @@
 <div th:insert="fragments/header :: header"></div>
 
 <div class="container">
-    <form method="post">
-        <label for="addName">Назва</label>
-        <input type="text" name="name" class="form-control" id="addName" placeholder="category name"/>
-        <label for="addComment">Опис</label>
-        <input type="tel" name="comment" class="form-control" id="addComment" placeholder="description"/>
-        <button type="submit" class="btn btn-info">Submit</button>
-    </form>
+    <h1>Редагувати</h1>
+    <div>
+        <form method="post" th:each="el : ${curr}">
+            <label>Назва</label>
+            <input th:value="${el.name}" type="text" name="name" class="form-control" placeholder="category name"/>
+            <label>Опис</label>
+            <input th:value="${el.comment}" type="text" name="comment" class="form-control" placeholder="description"/>
+            <button type="submit" class="btn btn-info">Save</button>
+        </form>
+    </div>
+
+
 </div>
 
 
