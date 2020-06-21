@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>AbyCash</title>
+
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +27,12 @@
                 <div class="d-flex justify-content-center">
                     <input type="text" class="form-control is-valid mr-1" placeholder="Назва рахунку"/>
                     <input type="text" class="form-control is-valid mr-1" placeholder="Початковий баланс"/>
-                    <input type="text" class="form-control is-valid mr-1" placeholder="Валюта"/>
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                        <option selected>Валюта</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
                     <input type="text" class="form-control is-valid mr-1" placeholder="Опис"/>
                     <button class="btn btn-success" type="submit">Додати рахунок</button>
                 </div>
