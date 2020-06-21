@@ -28,13 +28,8 @@ public class ArticlesFolderController {
     @GetMapping("/articles_folder")
     public String index(Model model) {
         model.addAttribute("loginUser", usersRepo.findById(1).get().getLogin());
-
-        Iterable<Categories> c1 = categoriesRepo.findIncome();
-        Iterable<Categories> c2 = categoriesRepo.findOutcome();
-
-        model.addAttribute("incomeCategory", c1);
-        model.addAttribute("outcomeCategory", c2);
-
+        model.addAttribute("incomeCategory", categoriesRepo.findParent(1));
+        model.addAttribute("outcomeCategory", categoriesRepo.findParent(2));
         return "articles_folder";
     }
 
@@ -49,7 +44,6 @@ public class ArticlesFolderController {
             @RequestParam String name,
             @RequestParam String comment,
             Model model) {
-
         System.out.println(name);
         System.out.println(comment);
         Categories categories = new Categories(name, comment, id);
@@ -57,28 +51,13 @@ public class ArticlesFolderController {
         return "redirect:/articles_folder";
     }
 
-    /*
     @GetMapping("/articles_folder/{id}/edit")
     public String editCategoryGet(@PathVariable(value = "id") int id, Model model) {
-        Optional<Categories> categories = categoriesRepo.findById(id);
-        ArrayList<Categories> res = new ArrayList<Categories>();
-        categories.ifPresent(res::add);
-
-        model.addAttribute("curr-categ", res);
-        return "fragments/editCategory";
-    }*/
-
-    @GetMapping("/articles_folder/{id}/edit")
-    public String editCategoryGet(@PathVariable(value = "id") int id, Model model) {
-        if (!categoriesRepo.existsById(id)) {
-            return "redirect:/articles_folder";
-        }
-
+        if (!categoriesRepo.existsById(id)) return "redirect:/articles_folder";
         Optional<Categories> categories = categoriesRepo.findById(id);
         ArrayList<Categories> res = new ArrayList<Categories>();
         categories.ifPresent(res::add);
         model.addAttribute("curr", res);
-
         return "fragments/editCategory";
     }
 
@@ -91,7 +70,16 @@ public class ArticlesFolderController {
         category.setName(name);
         category.setComment(comment);
         categoriesRepo.save(category);
+        return "redirect:/articles_folder";
+    }
 
+    @PostMapping("/articles_folder/{id}/delete")
+    public String deleteCategory (@PathVariable(value = "id") int id, Model model) {
+        if (categoriesRepo.existsById(id))
+            System.out.println("fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+
+        Categories categories = categoriesRepo.findById(id).orElseThrow();
+        categoriesRepo.delete(categories);
         return "redirect:/articles_folder";
     }
 }

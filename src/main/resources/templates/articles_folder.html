@@ -14,32 +14,34 @@
 <div th:insert="fragments/header :: header"></div>
 
 <div class="container mt-5">
-            <form class="mb-5">
-                <h5>Всі статті доходу</h5>
-                <table class="table table-sm table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>Назва категорії</th>
-                        <th>Опис</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="element : ${incomeCategory}">
-                        <td style="width:25%" th:text="${element.name}"/>
-                        <td style="width:50%" th:text="${element.comment}"/>
-                        <td style="width:20px" >
-                            <a class="text-warning" th:href="'/articles_folder/' + ${element.id} + '/edit'">
-                                редагувати
-                            </a>
-                        </td>
-                        <td style="width:20px"><a class="text-danger" href="#">видалити</a></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <a class="font-weight-light ml-3" style="font-size:14px" href="/articles_folder/1/add">додати категорію</a>
-            </form>
+    <form class="mb-5">
+        <h5>Всі статті доходу</h5>
+        <table class="table table-sm table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Назва категорії</th>
+                <th>Опис</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="element : ${incomeCategory}">
+                <td style="width:25%" th:text="${element.name}"/>
+                <td style="width:50%" th:text="${element.comment}"/>
+                <td style="width:20px" >
+                    <a class="btn btn-warning btn-sm" th:href="'/articles_folder/' + ${element.id} + '/edit'">редагувати</a>
+                </td>
+                <td style="width:20px">
+                    <form th:action="'/articles_folder/' + ${element.id} + '/delete'" method="post">
+                        <button class="btn-danger btn-sm" type="submit" style="text-align:center;">видалити</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="font-weight-light ml-3" style="font-size:14px" href="/articles_folder/1/add">додати категорію</a>
+    </form>
     <form>
         <h5>Всі статті витрат</h5>
         <table class="table table-sm table-bordered table-striped">
@@ -55,15 +57,11 @@
             <tr th:each="element : ${outcomeCategory}">
                 <td style="width:25%" th:text="${element.name}"/>
                 <td style="width:50%" th:text="${element.comment}"/>
-                <td style="width:20px" >
-                    <a class="text-warning" th:href="'/articles_folder/' + ${element.id} + '/edit'">
-                        редагувати
-                    </a>
-                </td>
-                <td  style="width:20px">
-                    <a class="text-danger" href="#">
-                        видалити
-                    </a>
+                <td style="width:20px"><button class="btn btn-warning btn-sm" th:href="'/articles_folder/' + ${element.id} + '/edit'">редагувати</button></td>
+                <td style="width:20px">
+                    <form th:action="'/articles_folder/' + ${element.id} + '/delete'" method="post">
+                        <button class="btn-danger btn-sm" type="submit" style="text-align:center;">видалити</button>
+                    </form>
                 </td>
             </tr>
             </tbody>

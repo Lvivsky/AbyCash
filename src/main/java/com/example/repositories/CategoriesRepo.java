@@ -9,11 +9,9 @@ import java.util.List;
 
 public interface CategoriesRepo extends CrudRepository<Categories, Integer> {
 
-    @Query(value = "SELECT * FROM Categories WHERE Parent = 1", nativeQuery = true)
-    List<Categories> findIncome();
 
-    @Query(value = "SELECT * FROM Categories WHERE Parent = 2", nativeQuery = true)
-    List<Categories> findOutcome();
+    @Query(value = "SELECT * FROM Categories WHERE Parent = :id", nativeQuery = true)
+    List<Categories> findParent(@Param(value = "id") int id);
 
     @Query(value = "SELECT * FROM Categories WHERE Id = :id", nativeQuery = true)
     Categories findCategoryById(@Param("id") int id);
