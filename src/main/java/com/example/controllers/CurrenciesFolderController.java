@@ -1,7 +1,6 @@
 package com.example.controllers;
 
-import com.example.models.Currencies;
-import com.example.models.Users;
+import com.example.models.dbmodels.Currencies;
 import com.example.repositories.CurrenciesRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;

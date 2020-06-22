@@ -1,10 +1,10 @@
-package com.example.models;
+package com.example.models.dbmodels;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "DataSeriesCategoryFilters")
-public class DataSeriesCategoryFilters {
+@Table(name = "TransactionGroups" )
+public class TransactionGroups {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +13,9 @@ public class DataSeriesCategoryFilters {
     private String changed;
     private String deleted;
 
-    private String dataSeries;
-    private String category;
+    private String holderDataTime;
+    private String position;
+    private String recurrence;
 
     public int getId() {
         return id;
@@ -48,19 +49,27 @@ public class DataSeriesCategoryFilters {
         this.deleted = deleted;
     }
 
-    public String getDataSeries() {
-        return dataSeries;
+    public String getHolderDataTime() {
+        return holderDataTime;
     }
 
-    public void setDataSeries(String dataSeries) {
-        this.dataSeries = dataSeries;
+    public void setHolderDataTime(String holderDataTime) {
+        this.holderDataTime = holderDataTime;
     }
 
-    public String getCategory() {
-        return category;
+    public String getPosition() {
+        return position;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getRecurrence() {
+        return recurrence;
+    }
+
+    public void setRecurrence(String recurrence) {
+        this.recurrence = recurrence;
     }
 }

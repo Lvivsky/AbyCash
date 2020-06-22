@@ -13,7 +13,61 @@
 <body>
 <div th:insert="fragments/header :: header"></div>
 
-<h5>Operations</h5>
+<div class="container mt-5">
+    <form>
+        <div class="row d-flex justify-content-center">
+            <div class="d-flex justify-content-center">
+                <input type="text" class="form-control is-valid mr-1" placeholder="Назва рахунку"/>
+                <input type="text" class="form-control is-valid mr-1" placeholder="Початковий баланс"/>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                    <option selected>Валюта</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <input type="text" class="form-control is-valid mr-1" placeholder="Опис"/>
+                <button class="btn btn-success" type="submit">Додати рахунок</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container mt-3">
+    <table class="table table-sm table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Назва рахунку</th>
+            <th>Залишок</th>
+            <th>Валюта</th>
+            <th>опис</th>
+            <th>дата</th>
+
+            <th style="width:1%"></th>       <!--     // lock would be here -->
+            <th style="width:1%"></th>     <!--                        -->
+        </tr>
+        </thead>
+        <tbody>
+        <div >
+            <tr>
+                <td />
+                <td />
+                <td />
+                <td />
+                <td>
+                    <form>
+                        <button class="btn btn-warning btn-sm">редагувати</button>
+                    </form>
+                </td>
+                <td>
+                    <form>
+                        <button class="btn btn-danger btn-sm">видалити</button>
+                    </form>
+                </td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+</div>
 
 
 <!-- Optional JavaScript -->

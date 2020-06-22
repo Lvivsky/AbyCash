@@ -1,10 +1,10 @@
-package com.example.models;
+package com.example.models.dbmodels;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "BudgetItems")
-public class BudgetItems {
+@Table(name = "Users")
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,10 +12,12 @@ public class BudgetItems {
     private String guid;
     private String changed;
     private String deleted;
+    private String login;
 
-    private String parent;
-    private String name;
-    private String dataSeries;
+    @Override
+    public String toString() {
+        return login;
+    }
 
     public int getId() {
         return id;
@@ -49,27 +51,12 @@ public class BudgetItems {
         this.deleted = deleted;
     }
 
-    public String getParent() {
-        return parent;
+    public String getLogin() {
+        return login;
     }
 
-    public void setParent(String parent) {
-        this.parent = parent;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDataSeries() {
-        return dataSeries;
-    }
-
-    public void setDataSeries(String dataSeries) {
-        this.dataSeries = dataSeries;
-    }
 }

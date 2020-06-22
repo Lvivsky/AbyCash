@@ -1,7 +1,6 @@
 package com.example.controllers;
 
-import com.example.models.Categories;
-import com.example.models.Currencies;
+import com.example.models.dbmodels.Categories;
 import com.example.repositories.CategoriesRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -44,8 +42,8 @@ public class ArticlesFolderController {
             @RequestParam String name,
             @RequestParam String comment,
             Model model) {
-        System.out.println(name);
-        System.out.println(comment);
+        if (name.isEmpty())
+            return "redirect:/articles_folder";
         Categories categories = new Categories(name, comment, id);
         categoriesRepo.save(categories);
         return "redirect:/articles_folder";
@@ -58,7 +56,7 @@ public class ArticlesFolderController {
         ArrayList<Categories> res = new ArrayList<Categories>();
         categories.ifPresent(res::add);
         model.addAttribute("curr", res);
-        return "fragments/editCategory";
+        return "/fragments/editCategory";
     }
 
     @PostMapping("/articles_folder/{id}/edit")
@@ -66,20 +64,21 @@ public class ArticlesFolderController {
                                @RequestParam String name,
                                @RequestParam String comment, Model model) {
 
+        if (name.isEmpty())
+            return "redirect:/articles_folder";
+
         Categories category = categoriesRepo.findById(id).orElseThrow();
         category.setName(name);
         category.setComment(comment);
+
         categoriesRepo.save(category);
         return "redirect:/articles_folder";
     }
 
     @PostMapping("/articles_folder/{id}/delete")
     public String deleteCategory (@PathVariable(value = "id") int id, Model model) {
-        if (categoriesRepo.existsById(id))
-            System.out.println("fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
-        Categories categories = categoriesRepo.findById(id).orElseThrow();
-        categoriesRepo.delete(categories);
+        categoriesRepo.deleteById(id);
         return "redirect:/articles_folder";
     }
 }

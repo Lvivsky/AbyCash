@@ -1,10 +1,10 @@
-package com.example.models;
+package com.example.models.dbmodels;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TransactionGroups" )
-public class TransactionGroups {
+@Table(name = "TransactionCategories")
+public class TransactionCategories {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,9 +13,8 @@ public class TransactionGroups {
     private String changed;
     private String deleted;
 
-    private String holderDataTime;
-    private String position;
-    private String recurrence;
+    private String category;
+    private String transaction;
 
     public int getId() {
         return id;
@@ -49,27 +48,19 @@ public class TransactionGroups {
         this.deleted = deleted;
     }
 
-    public String getHolderDataTime() {
-        return holderDataTime;
+    public String getCategory() {
+        return category;
     }
 
-    public void setHolderDataTime(String holderDataTime) {
-        this.holderDataTime = holderDataTime;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getPosition() {
-        return position;
+    public String getTransaction() {
+        return transaction;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getRecurrence() {
-        return recurrence;
-    }
-
-    public void setRecurrence(String recurrence) {
-        this.recurrence = recurrence;
+    public void setTransaction(String transaction) {
+        this.transaction = transaction;
     }
 }

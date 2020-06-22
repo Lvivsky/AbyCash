@@ -8,32 +8,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>AbyCash</title>
-
-    <style>
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-    </style>
 </head>
 
 <body>
 <div th:insert="fragments/header :: header"></div>
 
 <div class="container mt-5">
-        <form>
+        <form method="post">
             <div class="row d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
-                    <input type="text" class="form-control is-valid mr-1" placeholder="Назва рахунку"/>
-                    <input type="text" class="form-control is-valid mr-1" placeholder="Початковий баланс"/>
-                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
-                        <option selected>Валюта</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <input type="text" name="name" class="form-control is-valid mr-1" placeholder="Назва рахунку"/>
+                    <input type="number" name="startingbalance" class="form-control is-valid mr-1" placeholder="Початковий баланс"/>
+                    <select name="currency" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                        <div th:each="e : ${currencies}" >
+                            <option><span th:text="${e.code}"/></option>
+                        </div>
                     </select>
-                    <input type="text" class="form-control is-valid mr-1" placeholder="Опис"/>
+
+                    <input type="text" name="comment" class="form-control is-valid mr-1" placeholder="Опис"/>
                     <button class="btn btn-success" type="submit">Додати рахунок</button>
                 </div>
             </div>
@@ -41,44 +33,33 @@
 </div>
 
 
-<div class="container mt-5">
-    <div>
-        <div th:each="el : ${users}" class="alert alert-info mt-2">
-            <h3 th:text="${el.guid}"/>
-            <h3 th:text="${el.changed}"/>
-            <h3 th:text="${el.deleted}"/>
-            <h3 th:text="${el.login}"/>
-        </div>
-    </div>
-</div>
+
 
 <div class="container mt-3">
     <table class="table table-sm table-bordered table-striped">
         <thead>
-        <tr>
-            <th>Назва рахунку</th>
-            <th>Залишок</th>
-            <th>Валюта</th>
-            <th>опис</th>
-            <th style="width:1%"></th>       <!--     // lock would be here -->
-            <th style="width:1%"></th>     <!--                        -->
-        </tr>
+            <tr>
+                <th>Назва рахунку</th>
+                <th>Залишок</th>
+                <th>Валюта</th>
+                <th>опис</th>
+                <th style="width:1%"></th>       <!--     // lock would be here -->
+                <th style="width:1%"></th>     <!--                        -->
+            </tr>
         </thead>
         <tbody>
-            <div th:each="element : ${accounts}">
-                <tr>
+            <div >
+                <tr th:each="element : ${accounts}">
                     <td th:text="${element.name}"/>
                     <td th:text="${element.startingbalance}"/>
                     <td th:text="${element.currency}"/>
                     <td th:text="${element.comment}"/>
                     <td>
-                        <form>
-                            <button class="btn btn-warning btn-sm">редагувати</button>
-                        </form>
+                        <a class="btn btn-warning btn-sm" th:href="'/accounts_folder/' + ${element.id} + '/edit'">редагувати</a>
                     </td>
                     <td>
-                        <form>
-                            <button class="btn btn-danger btn-sm">видалити</button>
+                        <form method="post" th:action="'accounts_folder/' + ${element.id} + '/delete'">
+                            <button class="btn-danger btn-sm" type="submit">видалити</button>
                         </form>
                     </td>
                 </tr>

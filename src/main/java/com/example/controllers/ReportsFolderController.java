@@ -1,7 +1,5 @@
 package com.example.controllers;
 
-import com.example.models.Categories;
-import com.example.repositories.CategoriesRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

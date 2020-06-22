@@ -1,8 +1,6 @@
 package com.example.controllers;
 
-import com.example.models.Accounts;
-import com.example.models.Users;
-import com.example.repositories.AccountsRepo;
+import com.example.models.dbmodels.Users;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
