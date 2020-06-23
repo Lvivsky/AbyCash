@@ -48,22 +48,20 @@
             </tr>
         </thead>
         <tbody>
-            <div >
-                <tr th:each="element : ${accounts}">
-                    <td th:text="${element.name}"/>
-                    <td th:text="${element.startingbalance}"/>
-                    <td th:text="${element.currency}"/>
-                    <td th:text="${element.comment}"/>
-                    <td>
-                        <a class="btn btn-warning btn-sm" th:href="'/accounts_folder/' + ${element.id} + '/edit'">редагувати</a>
-                    </td>
-                    <td>
-                        <form method="post" th:action="'accounts_folder/' + ${element.id} + '/delete'">
-                            <button class="btn-danger btn-sm" type="submit">видалити</button>
-                        </form>
-                    </td>
-                </tr>
-            </div>
+            <tr th:each="element : ${accounts}">
+                <td th:text="${element.name}"/>
+                <td th:text="${element.startingbalance}"/>
+                <td th:text="${element.currency}"/>
+                <td th:text="${element.comment}"/>
+                <td>
+                    <a class="btn btn-warning btn-sm" th:href="'/accounts_folder/' + ${element.id} + '/edit'">редагувати</a>
+                </td>
+                <td>
+                    <form method="post" th:action="'accounts_folder/' + ${element.id} + '/delete'">
+                        <button class="btn-danger btn-sm" type="submit">видалити</button>
+                    </form>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

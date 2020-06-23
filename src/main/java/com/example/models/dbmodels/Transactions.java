@@ -1,6 +1,10 @@
 package com.example.models.dbmodels;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name="Transactions")
@@ -14,24 +18,40 @@ public class Transactions {
     private String deleted;
 
     private String position;
-    private String budgetDate;
+    private String budgetdate;
     private String executed;
     private String locked;
 
-    private String incomeAccount;
-    private String incomeAmount;
-    private String incomeBalance;
-    private String expenseAccount;
-    private String expenseAmount;
-    private String expenseBalance;
+    private String incomeaccount;
+    private String incomeamount;
+    private String incomebalance;
+    private String expenseaccount;
+    private String expenseamount;
+    private String expensebalance;
 
     private String quantity;
     private String comment;
-    private String extraComment1;
-    private String extraComment2;
-    private String extraComment3;
-    private String extraComment4;
-    private String budgetPeriodEnd;
+    private String extracomment1;
+    private String extracomment2;
+    private String extracomment3;
+    private String extracomment4;
+    private String budgetperiodend;
+
+
+    // return normal date from milliseconds
+    public String getBudgetdate() {
+        Date date = new Date(Long.valueOf(budgetdate) * 1000);
+        SimpleDateFormat sdfDate = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        return sdfDate.format(date);
+    }
+
+    public String getSortedByDate() {
+        return this.budgetdate;
+    }
+
+    public void setBudgetdate(String budgetdate) {
+        this.budgetdate = budgetdate;
+    }
 
     public int getId() {
         return id;
@@ -73,13 +93,7 @@ public class Transactions {
         this.position = position;
     }
 
-    public String getBudgetDate() {
-        return budgetDate;
-    }
 
-    public void setBudgetDate(String budgetDate) {
-        this.budgetDate = budgetDate;
-    }
 
     public String getExecuted() {
         return executed;
@@ -97,52 +111,52 @@ public class Transactions {
         this.locked = locked;
     }
 
-    public String getIncomeAccount() {
-        return incomeAccount;
+    public String getIncomeaccount() {
+        return incomeaccount;
     }
 
-    public void setIncomeAccount(String incomeAccount) {
-        this.incomeAccount = incomeAccount;
+    public void setIncomeaccount(String incomeaccount) {
+        this.incomeaccount = incomeaccount;
     }
 
-    public String getIncomeAmount() {
-        return incomeAmount;
+    public String getIncomeamount() {
+        return incomeamount;
     }
 
-    public void setIncomeAmount(String incomeAmount) {
-        this.incomeAmount = incomeAmount;
+    public void setIncomeamount(String incomeamount) {
+        this.incomeamount = incomeamount;
     }
 
-    public String getIncomeBalance() {
-        return incomeBalance;
+    public String getIncomebalance() {
+        return incomebalance;
     }
 
-    public void setIncomeBalance(String incomeBalance) {
-        this.incomeBalance = incomeBalance;
+    public void setIncomebalance(String incomebalance) {
+        this.incomebalance = incomebalance;
     }
 
-    public String getExpenseAccount() {
-        return expenseAccount;
+    public String getExpenseaccount() {
+        return expenseaccount;
     }
 
-    public void setExpenseAccount(String expenseAccount) {
-        this.expenseAccount = expenseAccount;
+    public void setExpenseaccount(String expenseaccount) {
+        this.expenseaccount = expenseaccount;
     }
 
-    public String getExpenseAmount() {
-        return expenseAmount;
+    public String getExpenseamount() {
+        return expenseamount;
     }
 
-    public void setExpenseAmount(String expenseAmount) {
-        this.expenseAmount = expenseAmount;
+    public void setExpenseamount(String expenseamount) {
+        this.expenseamount = expenseamount;
     }
 
-    public String getExpenseBalance() {
-        return expenseBalance;
+    public String getExpensebalance() {
+        return expensebalance;
     }
 
-    public void setExpenseBalance(String expenseBalance) {
-        this.expenseBalance = expenseBalance;
+    public void setExpensebalance(String expensebalance) {
+        this.expensebalance = expensebalance;
     }
 
     public String getQuantity() {
@@ -161,43 +175,43 @@ public class Transactions {
         this.comment = comment;
     }
 
-    public String getExtraComment1() {
-        return extraComment1;
+    public String getExtracomment1() {
+        return extracomment1;
     }
 
-    public void setExtraComment1(String extraComment1) {
-        this.extraComment1 = extraComment1;
+    public void setExtracomment1(String extracomment1) {
+        this.extracomment1 = extracomment1;
     }
 
-    public String getExtraComment2() {
-        return extraComment2;
+    public String getExtracomment2() {
+        return extracomment2;
     }
 
-    public void setExtraComment2(String extraComment2) {
-        this.extraComment2 = extraComment2;
+    public void setExtracomment2(String extracomment2) {
+        this.extracomment2 = extracomment2;
     }
 
-    public String getExtraComment3() {
-        return extraComment3;
+    public String getExtracomment3() {
+        return extracomment3;
     }
 
-    public void setExtraComment3(String extraComment3) {
-        this.extraComment3 = extraComment3;
+    public void setExtracomment3(String extracomment3) {
+        this.extracomment3 = extracomment3;
     }
 
-    public String getExtraComment4() {
-        return extraComment4;
+    public String getExtracomment4() {
+        return extracomment4;
     }
 
-    public void setExtraComment4(String extraComment4) {
-        this.extraComment4 = extraComment4;
+    public void setExtracomment4(String extracomment4) {
+        this.extracomment4 = extracomment4;
     }
 
-    public String getBudgetPeriodEnd() {
-        return budgetPeriodEnd;
+    public String getBudgetperiodend() {
+        return budgetperiodend;
     }
 
-    public void setBudgetPeriodEnd(String budgetPeriodEnd) {
-        this.budgetPeriodEnd = budgetPeriodEnd;
+    public void setBudgetperiodend(String budgetperiodend) {
+        this.budgetperiodend = budgetperiodend;
     }
 }

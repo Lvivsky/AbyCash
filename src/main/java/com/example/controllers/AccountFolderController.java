@@ -36,7 +36,6 @@ public class AccountFolderController {
 
         Iterable<Currencies> currencies = currenciesRepo.findAll();
         model.addAttribute("currencies", currencies);
-
         try {
             Iterable<Accounts> accounts = accountsRepo.findAll();
             model.addAttribute("accounts", accounts);
@@ -44,9 +43,6 @@ public class AccountFolderController {
             System.out.println("шось не так! " + e.getMessage());
             e.printStackTrace();
         }
-
-
-
         return "accounts_folder";
     }
 

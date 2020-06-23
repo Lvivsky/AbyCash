@@ -2,8 +2,11 @@
   <dictionary name="Damon">
     <words>
       <w>currencyid</w>
+      <w>korrespondent</w>
       <w>sqlite</w>
       <w>startingbalance</w>
+      <w>suma</w>
+      <w>zalushok</w>
     </words>
   </dictionary>
 </component>

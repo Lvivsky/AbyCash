@@ -13,7 +13,7 @@ public class TransactionGroups {
     private String changed;
     private String deleted;
 
-    private String holderDataTime;
+    private String holderdatatime;
     private String position;
     private String recurrence;
 
@@ -49,12 +49,12 @@ public class TransactionGroups {
         this.deleted = deleted;
     }
 
-    public String getHolderDataTime() {
-        return holderDataTime;
+    public String getHolderdatatime() {
+        return holderdatatime;
     }
 
-    public void setHolderDataTime(String holderDataTime) {
-        this.holderDataTime = holderDataTime;
+    public void setHolderdatatime(String holderdatatime) {
+        this.holderdatatime = holderdatatime;
     }
 
     public String getPosition() {
