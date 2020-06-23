@@ -54,6 +54,10 @@ public class OperationFolderController {
                     currencies = currenciesRepo.findById(Integer.valueOf(e.getIncomeaccount())).orElse(null);
                 }
 
+                if (account == null) {
+                    continue;
+                }
+
                 operationTransaction.add(new OperationTransaction(
                         e.getBudgetdate(),
                         account != null ? account.getName() : null,
