@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/TransactionsRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Damon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Damon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/models/nmodel/OperationTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/TransactionCategoryRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DefaultDataBase.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DefaultDataBase.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/AccountFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/AccountFolderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/OperationFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/OperationFolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/models/dbmodels/TransactionGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/models/dbmodels/TransactionGroups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/models/dbmodels/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/models/dbmodels/Transactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/models/nmodel/Operation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/repositories/CurrenciesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/CurrenciesRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/accounts_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/accounts_folder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/models/dbmodels/TransactionCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/models/dbmodels/Transactioncategories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/operation_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/operation_folder.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,8 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -248,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592795795808</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="operations rebuild table&#10;fix date column">
+      <created>1592934306055</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592934306056</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -286,7 +287,8 @@
     <MESSAGE value="fix -&gt;&#10;addCategory.html&#10;editCategory.html&#10;articles_folder.html&#10;&#10;add -&gt;&#10;accounts_folder.html design" />
     <MESSAGE value="fix details" />
     <MESSAGE value="add backend for account folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="add backend for account folder" />
+    <MESSAGE value="operations rebuild table&#10;fix date column" />
+    <option name="LAST_COMMIT_MESSAGE" value="operations rebuild table&#10;fix date column" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1592741177583">
@@ -305,10 +307,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="445" y="172" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1592750912461" />
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1592852096780">
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser" timestamp="1592938457465">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592852096780" />
+    <state x="488" y="85" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1592938457465" />
     <state x="427" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592658833324">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -317,10 +319,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1592650680838" />
-    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592795790993">
+    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1592934303233">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592795790993" />
+    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1592934303233" />
     <state x="1807" y="-300" key="CommitChangelistDialog2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934106" />
     <state x="1620" y="-274" key="DiffContextDialog" timestamp="1592688986246">
       <screen x="1440" y="-300" width="1920" height="1200" />
@@ -330,28 +332,28 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592501289436" />
-    <state width="1323" height="55" key="GridCell.Tab.0.bottom" timestamp="1592934167833">
+    <state width="1323" height="387" key="GridCell.Tab.0.bottom" timestamp="1592941012389">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="55" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592934167833" />
+    <state width="1323" height="387" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1592941012389" />
     <state width="1878" height="441" key="GridCell.Tab.0.bottom/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934174" />
     <state width="1878" height="466" key="GridCell.Tab.0.bottom/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772623" />
-    <state width="1323" height="55" key="GridCell.Tab.0.center" timestamp="1592934167833">
+    <state width="1323" height="387" key="GridCell.Tab.0.center" timestamp="1592941012388">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="55" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592934167833" />
+    <state width="1323" height="387" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1592941012388" />
     <state width="1878" height="441" key="GridCell.Tab.0.center/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934171" />
     <state width="1878" height="466" key="GridCell.Tab.0.center/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772619" />
-    <state width="1323" height="55" key="GridCell.Tab.0.left" timestamp="1592934167832">
+    <state width="1323" height="387" key="GridCell.Tab.0.left" timestamp="1592941012388">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="55" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592934167832" />
+    <state width="1323" height="387" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1592941012388" />
     <state width="1878" height="441" key="GridCell.Tab.0.left/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934169" />
     <state width="1878" height="466" key="GridCell.Tab.0.left/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772617" />
-    <state width="1323" height="55" key="GridCell.Tab.0.right" timestamp="1592934167833">
+    <state width="1323" height="387" key="GridCell.Tab.0.right" timestamp="1592941012388">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="55" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592934167833" />
+    <state width="1323" height="387" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592941012388" />
     <state width="1878" height="441" key="GridCell.Tab.0.right/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934173" />
     <state width="1878" height="466" key="GridCell.Tab.0.right/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772621" />
     <state width="1323" height="155" key="GridCell.Tab.1.bottom" timestamp="1592850051695">
@@ -386,10 +388,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1592739132985" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592795798034">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1592934337212">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592795798034" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1592934337212" />
     <state x="1827" y="-134" key="Vcs.Push.Dialog.v2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592689591152" />
     <state x="544" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592850092291">
       <screen x="0" y="0" width="1366" height="738" />
@@ -404,9 +406,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1592673123203" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1592850907393">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1592936029013">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1592850907393" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1592936029013" />
   </component>
 </project>
