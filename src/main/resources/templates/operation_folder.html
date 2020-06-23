@@ -51,21 +51,21 @@
         </thead>
         <tbody>
                 <tr th:each="e : ${operations}">
-                    <td th:text="${e.budgetdate}"/>
+                    <td th:text="${e.date}"/>
 
-                    <div th:if="${e.incomeaccount} == null">
-                        <td th:text="${e.expenseaccount} + '*'"/>
-                        <td class="text-right text-danger" th:text="${e.expenseamount}"/>
+                    <div th:if="${e.amount}[0] != '-'">
+                        <td th:text="${e.account} + '*'"/>
+                        <td class="text-right text-danger" th:text="${e.amount}"/>
                     </div>
 
-                    <div th:unless="${e.incomeaccount} == null">
-                        <td th:text="${e.incomeaccount}"/>
-                        <td class="text-success" th:text="${e.incomeamount}"/>
+                    <div th:unless="${e.amount}[0] != '-'">
+                        <td th:text="${e.account}"/>
+                        <td class="text-success" th:text="${e.amount}"/>
 
                     </div>
 
-                    <td class="text-center" th:text="'*usd'"/>
-                    <td th:text="'*стаття'"/>
+                    <td class="text-center" th:text="${e.currency}"/>
+                    <td th:text="${e.state}"/>
                     <td th:text="${e.comment}"/>
                     <td>
                         <form>

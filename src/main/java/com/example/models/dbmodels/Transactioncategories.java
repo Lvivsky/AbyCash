@@ -3,7 +3,7 @@ package com.example.models.dbmodels;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TransactionCategories")
+@Table(name = "Transactioncategories")
 public class Transactioncategories {
 
     @Id
@@ -14,7 +14,9 @@ public class Transactioncategories {
     private String deleted;
 
     private String category;
-    private String transaction;
+
+    @Column(name = "'transaction'")
+    private Integer transaction;
 
     public int getId() {
         return id;
@@ -56,11 +58,11 @@ public class Transactioncategories {
         this.category = category;
     }
 
-    public String getTransaction() {
+    public Integer getTransaction() {
         return transaction;
     }
 
-    public void setTransaction(String transaction) {
+    public void setTransaction(Integer transaction) {
         this.transaction = transaction;
     }
 }

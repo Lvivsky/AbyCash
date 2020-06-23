@@ -1,14 +1,13 @@
 package com.example.controllers;
 
-import com.example.models.dbmodels.Accounts;
-import com.example.models.dbmodels.Categories;
-import com.example.models.dbmodels.Currencies;
-import com.example.models.dbmodels.Transactions;
+import com.example.models.dbmodels.*;
 import com.example.models.nmodel.OperationTransaction;
 import com.example.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
@@ -22,7 +21,7 @@ public class OperationFolderController {
     @Autowired private UsersRepo usersRepo;
     @Autowired private TransactionsRepo transactionsRepo;
     @Autowired private CategoriesRepo categoriesRepo;
-    @Autowired private TransactionCategoryRepo transactionCategoryRepo;
+    @Autowired private TransactioncategoriesRepo transactionCategoriesRepo;
     @Autowired private AccountsRepo accountsRepo;
     @Autowired private CurrenciesRepo currenciesRepo;
 
@@ -32,26 +31,35 @@ public class OperationFolderController {
 
         List<Transactions> transactions = (ArrayList)transactionsRepo.findAll();
         transactions.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
-        model.addAttribute("operations", transactions);
+//        model.addAttribute("operations", transactions);
         try {
 
             List<Transactions> list = (ArrayList)transactionsRepo.findAll();
             list.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
             List<OperationTransaction> operationTransaction = new ArrayList<>();
 
+
             for (Transactions e: list) {
-                Optional<Accounts> account = accountsRepo.findById(Integer.valueOf(e.getIncomeaccount()));
-                Optional<Currencies> currencies = currenciesRepo.findById(Integer.valueOf(e.getIncomeaccount()));
-                Optional<Categories> categories = categoriesRepo.findById(
-                        Integer.valueOf(transactionCategoryRepo.findByTransaction(String.valueOf(e.getId()))));
+
+                List<Transactioncategories> allByTransaction = transactionCategoriesRepo.findAllByTransaction(e.getId());
+                Categories categories = null;
+                if (!CollectionUtils.isEmpty(allByTransaction)) {
+                    categories = categoriesRepo.findById(Integer.valueOf(allByTransaction.get(0).getCategory())).orElse(null);
+                }
+
+                Accounts account = null;
+                Currencies currencies = null;
+                if (e.getIncomeaccount() != null) {
+                    account = accountsRepo.findById(Integer.valueOf(e.getIncomeaccount())).orElse(null);
+                    currencies = currenciesRepo.findById(Integer.valueOf(e.getIncomeaccount())).orElse(null);
+                }
 
                 operationTransaction.add(new OperationTransaction(
                         e.getBudgetdate(),
-                        account.get().getName(),
-                        e.getIncomeamount(),
-                        e.getExpenseamount(),
-                        currencies.get().getCode(),
-                        categories.get().getName(),
+                        account != null ? account.getName() : null,
+                        e.getIncomeamount() != null ? e.getIncomeaccount() : e. getExpenseamount(),
+                        currencies != null ? currencies.getCode() : null,
+                        categories !=  null ? categories.getName() : null,
                         e.getComment()
                 ));
             }
@@ -61,6 +69,7 @@ public class OperationFolderController {
                 System.out.println(e.toString());
             }
 
+            model.addAttribute("operations", operationTransaction);
 
 
         } catch (Exception e) {

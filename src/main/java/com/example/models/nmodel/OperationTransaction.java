@@ -9,31 +9,29 @@ public class OperationTransaction {
 
     private String date;
     private String account;
-    private String amountIncome;
-    private String amountExpanse;
+    private String amount;
     private String currency;
     private String state;
     private String comment;
 
     public OperationTransaction() {}
-    public OperationTransaction(Transactions transactions,
-                                Accounts accounts,
-                                Categories categories,
-                                Currencies currencies) {
-        this.date = transactions.getBudgetdate();
-        this.account = accounts.getName();
-        this.amountIncome = transactions.getIncomeamount();
-        this.amountExpanse = transactions.getExpenseamount();
-        this.currency = currencies.getCode();
-        this.state = categories.getName();
-        this.comment = transactions.getComment();
-    }
+//    public OperationTransaction(Transactions transactions,
+//                                Accounts accounts,
+//                                Categories categories,
+//                                Currencies currencies) {
+//        this.date = transactions.getBudgetdate();
+//        this.account = accounts.getName();
+//        this.amount = transactions.get();
+//        this.amountExpanse = transactions.getExpenseamount();
+//        this.currency = currencies.getCode();
+//        this.state = categories.getName();
+//        this.comment = transactions.getComment();
+//    }
 
-    public OperationTransaction(String date, String account, String amountIncome, String amountExpanse, String currency, String state, String comment) {
+    public OperationTransaction(String date, String account, String amount, String currency, String state, String comment) {
         this.date = date;
         this.account = account;
-        this.amountIncome = amountIncome;
-        this.amountExpanse = amountExpanse;
+        this.amount = amount;
         this.currency = currency;
         this.state = state;
         this.comment = comment;
@@ -43,8 +41,7 @@ public class OperationTransaction {
     public String toString() {
         return "Date: = " + this.date +
                 "\nAccount = " + this.account +
-                "\namount income = " + this.amountIncome +
-                "\namount expanse = " + this.amountExpanse +
+                "\namount = " + this.amount +
                 "\nCurrency = " + this.currency +
                 "\nState = " + this.state +
                 "\nComment = " + this.comment +
@@ -67,20 +64,12 @@ public class OperationTransaction {
         this.account = account;
     }
 
-    public String getAmountIncome() {
-        return amountIncome;
+    public String getAmount() {
+        return amount;
     }
 
-    public void setAmountIncome(String amountIncome) {
-        this.amountIncome = amountIncome;
-    }
-
-    public String getAmountExpanse() {
-        return amountExpanse;
-    }
-
-    public void setAmountExpanse(String amountExpanse) {
-        this.amountExpanse = amountExpanse;
+    public void setAmount(String amount) {
+        this.amount = amount;
     }
 
     public String getCurrency() {

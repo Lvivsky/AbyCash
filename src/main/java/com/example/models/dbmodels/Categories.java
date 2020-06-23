@@ -17,7 +17,7 @@ public class Categories {
 
     private String name;
     private String comment;
-    private int parent;
+    private Integer parent;
 
     public Categories() {}
     public Categories(String name, String comment, int parent) {
@@ -78,11 +78,11 @@ public class Categories {
         this.comment = comment;
     }
 
-    public int getParent() {
+    public Integer getParent() {
         return parent;
     }
 
-    public void setParent(int parent) {
+    public void setParent(Integer parent) {
         this.parent = parent;
     }
 }
