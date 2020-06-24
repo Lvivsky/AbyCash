@@ -1,6 +1,8 @@
 package com.example.models.dbmodels;
 
 import javax.persistence.*;
+import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Table(name = "Transactioncategories")
@@ -17,6 +19,17 @@ public class Transactioncategories {
 
     @Column(name = "'transaction'")
     private Integer transaction;
+
+    public Transactioncategories() {}
+    public Transactioncategories(Integer categoryId, Integer transactionId){
+        this.guid = String.valueOf(UUID.randomUUID());
+        this.changed = String.valueOf(Instant.now().getEpochSecond());
+        this.deleted = "0";
+        this.category = categoryId.toString();
+        this.transaction = transactionId;
+
+    }
+
 
     public int getId() {
         return id;

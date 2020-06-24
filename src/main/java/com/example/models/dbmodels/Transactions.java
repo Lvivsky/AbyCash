@@ -17,6 +17,9 @@ public class Transactions {
     private String changed;
     private String deleted;
 
+    @Column(name = "Group")
+    private String group;
+
     private String position;
     private String budgetdate;
     private String executed;
@@ -37,6 +40,43 @@ public class Transactions {
     private String extracomment4;
     private String budgetperiodend;
 
+
+
+    public Transactions() {}
+    public Transactions(String incomeaccount,
+                        String incomeamount,
+                        String incomebalance,
+                        String expenseaccount,
+                        String expenseamount,
+                        String expensebalance,
+                        String comment,
+                        String quantity
+                        ) {
+        this.guid = String.valueOf(UUID.randomUUID());
+        this.changed = String.valueOf(Instant.now().getEpochSecond());
+        this.deleted = "0";
+        this.position = "0";
+        this.budgetdate = String.valueOf(Instant.now().getEpochSecond());
+        this.executed = "0";
+        this.locked = "0";
+
+        this.incomeaccount = incomeaccount;
+        this.incomeamount = incomeamount;
+        this.incomebalance = incomebalance;
+        this.expenseaccount = expenseaccount;
+        this.expenseamount = expenseamount;
+        this.expensebalance = expensebalance;
+
+        this.quantity = quantity;
+        this.comment = comment;
+
+        this.extracomment1 = "";
+        this.extracomment2 = "";
+        this.extracomment3 = "";
+        this.extracomment4 = "";
+        this.budgetperiodend = String.valueOf(Instant.now().getEpochSecond());
+
+    }
 
     // return normal date from milliseconds
     public String getBudgetdate() {
@@ -92,7 +132,6 @@ public class Transactions {
     public void setPosition(String position) {
         this.position = position;
     }
-
 
 
     public String getExecuted() {

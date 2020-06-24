@@ -5,10 +5,14 @@ import com.example.models.nmodel.OperationTransaction;
 import com.example.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -56,16 +60,11 @@ public class OperationFolderController {
                         e.getBudgetdate(),
                         accounts.get().getName(),
                         e.getIncomeamount() != null ? e.getIncomeamount() : e.getExpenseamount(),
-                        currenciesRepo.findById(Integer.valueOf(    accounts.get().getCurrency()    )).get().getCode(),
+                        currenciesRepo.findById(Integer.valueOf(accounts.get().getCurrency())).get().getCode(),
                         categories != null ? categories.getName() : null,
                         e.getComment()));
             }
 
-
-
-
-            for (OperationTransaction e: operationTransaction) {
-                System.out.println(e.toString()); }
             model.addAttribute("operations", operationTransaction);
         } catch (Exception e) {
             System.out.println("шось тут не так!!!  " + e.getMessage());
@@ -75,5 +74,80 @@ public class OperationFolderController {
 
 
         return "operation_folder";
+    }
+
+    @GetMapping("/operation_folder/{id}/add")
+    public String addTransaction(
+            @PathVariable(value = "id") int id,
+            Model model) {
+        if (id == 1) model.addAttribute("main_title", "Дохід");
+        else model.addAttribute("main_title", "Витрата");
+        model.addAttribute("all_accounts", accountsRepo.findAllUnlocked());
+        model.addAttribute("all_states", categoriesRepo.findParent(id));
+        return "/fragments/addTransaction";
+    }
+
+
+    @PostMapping("/operation_folder/{id}/add")
+    public String addTransactionPost(@PathVariable(value = "id") int id,
+                                     @RequestParam String account_name,
+                                     @RequestParam String amount,
+                                     @RequestParam String state_name,
+                                     @RequestParam String comment,
+                                     Model model) {
+
+        System.out.println(
+                        "account name = " + account_name +
+                        "\namount = " + amount +
+                        "\nstate name = " + state_name +
+                        "\ncomment = " + comment
+        );
+
+        Accounts accounts = accountsRepo.findByName(account_name);
+
+        try {
+            Transactions transactions;
+            if (id == 1) {
+                transactions = new Transactions(
+                        String.valueOf(accounts.getId()),
+                        String.valueOf(amount),
+                        String.valueOf(accounts.getStartingbalance()),
+                        "",
+                        "",
+                        "",
+                        comment,
+                        "10000"
+                );
+                Transactioncategories transactioncategories
+                        = new Transactioncategories(
+                        categoriesRepo.findByName(state_name).getId(),
+                        transactions.getId());
+                transactionsRepo.save(transactions);
+                transactionCategoriesRepo.save(transactioncategories);
+            }
+            else if (id == 2) {
+                transactions = new Transactions(
+                        "",
+                        "",
+                        "",
+                        String.valueOf(accounts.getId()),
+                        String.valueOf(amount),
+                        String.valueOf(accounts.getStartingbalance()),
+                        comment,
+                        "10000"
+                );
+                Transactioncategories transactioncategories
+                        = new Transactioncategories(
+                        categoriesRepo.findByName(state_name).getId(),
+                        transactions.getId());
+                transactionsRepo.save(transactions);
+                transactionCategoriesRepo.save(transactioncategories);
+            }
+        }
+        catch (Exception e) {
+            System.out.println("Помилка ! " + e.getMessage());
+            e.printStackTrace();
+        }
+        return "redirect:/operation_folder";
     }
 }
