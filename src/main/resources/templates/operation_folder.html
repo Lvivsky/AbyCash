@@ -53,16 +53,8 @@
                 <tr th:each="e : ${operations}">
                     <td th:text="${e.date}"/>
 
-                    <div th:if="${e.amount}[0] != '-'">
-                        <td th:text="${e.account} + '*'"/>
-                        <td class="text-right text-danger" th:text="${e.amount}"/>
-                    </div>
-
-                    <div th:unless="${e.amount}[0] != '-'">
-                        <td th:text="${e.account}"/>
-                        <td class="text-success" th:text="${e.amount}"/>
-
-                    </div>
+                    <td th:text="${e.account}"/>
+                    <td class="text-danger text-right" th:text="${e.amount}"/>
 
                     <td class="text-center" th:text="${e.currency}"/>
                     <td th:text="${e.state}"/>

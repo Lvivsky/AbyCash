@@ -31,7 +31,7 @@ public class OperationFolderController {
 
         List<Transactions> transactions = (ArrayList)transactionsRepo.findAll();
         transactions.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
-//        model.addAttribute("operations", transactions);
+
         try {
 
             List<Transactions> list = (ArrayList)transactionsRepo.findAll();
@@ -40,42 +40,33 @@ public class OperationFolderController {
 
 
             for (Transactions e: list) {
-
                 List<Transactioncategories> allByTransaction = transactionCategoriesRepo.findAllByTransaction(e.getId());
                 Categories categories = null;
                 if (!CollectionUtils.isEmpty(allByTransaction)) {
                     categories = categoriesRepo.findById(Integer.valueOf(allByTransaction.get(0).getCategory())).orElse(null);
                 }
 
-                Accounts account = null;
-                Currencies currencies = null;
-                if (e.getIncomeaccount() != null) {
-                    account = accountsRepo.findById(Integer.valueOf(e.getIncomeaccount())).orElse(null);
-                    currencies = currenciesRepo.findById(Integer.valueOf(e.getIncomeaccount())).orElse(null);
-                }
+                String i = e.getIncomeaccount() != null ? e.getIncomeaccount() : e.getExpenseaccount();
 
-                if (account == null) {
-                    continue;
-                }
+                Optional<Accounts> accounts = accountsRepo.findById(Integer.valueOf(i));
+                List<Accounts> res = new ArrayList<Accounts>();
+                accounts.ifPresent(res::add);
 
-                operationTransaction.add(new OperationTransaction(
+                operationTransaction.add( new OperationTransaction(
                         e.getBudgetdate(),
-                        account != null ? account.getName() : null,
-                        e.getIncomeamount() != null ? e.getIncomeaccount() : e. getExpenseamount(),
-                        currencies != null ? currencies.getCode() : null,
-                        categories !=  null ? categories.getName() : null,
-                        e.getComment()
-                ));
+                        accounts.get().getName(),
+                        e.getIncomeamount() != null ? e.getIncomeamount() : e.getExpenseamount(),
+                        currenciesRepo.findById(Integer.valueOf(    accounts.get().getCurrency()    )).get().getCode(),
+                        categories != null ? categories.getName() : null,
+                        e.getComment()));
             }
+
+
 
 
             for (OperationTransaction e: operationTransaction) {
-                System.out.println(e.toString());
-            }
-
+                System.out.println(e.toString()); }
             model.addAttribute("operations", operationTransaction);
-
-
         } catch (Exception e) {
             System.out.println("шось тут не так!!!  " + e.getMessage());
             e.printStackTrace();
@@ -84,11 +75,5 @@ public class OperationFolderController {
 
 
         return "operation_folder";
-    }
-    private Integer getThisCategory(Transactions t) {
-
-
-
-        return 0;
     }
 }
