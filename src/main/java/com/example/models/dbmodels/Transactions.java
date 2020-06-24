@@ -17,7 +17,7 @@ public class Transactions {
     private String changed;
     private String deleted;
 
-    @Column(name = "Group")
+    @Column(name = "'Group'")
     private String group;
 
     private String position;
@@ -59,6 +59,7 @@ public class Transactions {
         this.budgetdate = String.valueOf(Instant.now().getEpochSecond());
         this.executed = "0";
         this.locked = "0";
+        this.group = String.valueOf(this.id);
 
         this.incomeaccount = incomeaccount;
         this.incomeamount = incomeamount;

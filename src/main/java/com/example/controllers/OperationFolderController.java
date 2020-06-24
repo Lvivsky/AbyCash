@@ -118,10 +118,15 @@ public class OperationFolderController {
                         comment,
                         "10000"
                 );
+
+
+                System.out.println("\n\n\n===== tr id = " + transactionsRepo.findLatestId() + "\n\n");
+
                 Transactioncategories transactioncategories
                         = new Transactioncategories(
                         categoriesRepo.findByName(state_name).getId(),
-                        transactions.getId());
+                        transactionsRepo.findLatestId()
+                );
                 transactionsRepo.save(transactions);
                 transactionCategoriesRepo.save(transactioncategories);
             }
@@ -139,7 +144,8 @@ public class OperationFolderController {
                 Transactioncategories transactioncategories
                         = new Transactioncategories(
                         categoriesRepo.findByName(state_name).getId(),
-                        transactions.getId());
+                        transactionsRepo.findLatestId()
+                );
                 transactionsRepo.save(transactions);
                 transactionCategoriesRepo.save(transactioncategories);
             }
