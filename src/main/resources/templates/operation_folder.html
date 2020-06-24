@@ -38,9 +38,7 @@
                 <th style="width:1%" class="text-center">Валюта</th>
 
                 <th style="width:15%">Стаття</th>
-                <th style="width:30%">Коментарій</th>
-
-                <th style="width:1%"></th>     <!--  for double   // lock would be here -->
+                <th style="width:30%">Опис</th>
 
             </tr>
         </thead>
@@ -54,11 +52,6 @@
                     <td class="text-center" th:text="${e.currency}"/>
                     <td th:text="${e.state}"/>
                     <td th:text="${e.comment}"/>
-                    <td>
-                        <form>
-                            <button class="btn btn-primary btn-sm">дублювати</button>
-                        </form>
-                    </td>
                 </tr>
         </tbody>
     </table>

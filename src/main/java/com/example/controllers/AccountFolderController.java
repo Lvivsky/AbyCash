@@ -1,7 +1,6 @@
 package com.example.controllers;
 
 import com.example.models.dbmodels.Accounts;
-import com.example.models.dbmodels.Categories;
 import com.example.models.dbmodels.Currencies;
 import com.example.repositories.AccountsRepo;
 import com.example.repositories.CurrenciesRepo;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -37,8 +35,12 @@ public class AccountFolderController {
         Iterable<Currencies> currencies = currenciesRepo.findAll();
         model.addAttribute("currencies", currencies);
         try {
+
+
             Iterable<Accounts> accounts = accountsRepo.findAll();
             model.addAttribute("accounts", accounts);
+
+
         } catch (Exception e) {
             System.out.println("шось не так! " + e.getMessage());
             e.printStackTrace();
@@ -81,7 +83,7 @@ public class AccountFolderController {
     public String editCategoryPost(@PathVariable(value = "id") int id,
                                    @RequestParam String name,
                                    @RequestParam String comment,
-                                   @RequestParam boolean locked,
+                                   @RequestParam(required=false) boolean locked,
                                    Model model) {
         if (name.isEmpty())
             return "redirect:/accounts_folder";

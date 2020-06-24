@@ -7,26 +7,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown ml-3">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Файл</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
-                            Відкрити</a>
-                        <a class="dropdown-item" href="#">Зберегти</a>
-                        <a class="dropdown-item" href="#">Зберегти як</a>
-                    </div>
-                </li>
+
                 <li class="nav-item active ml-5">
                     <a class="nav-link" href="/accounts_folder">Рахунки<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-2">
                     <a class="nav-link" href="/operation_folder">Операції<span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item active ml-2">
-                    <a class="nav-link" href="/reports_folder">Звіти<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item active ml-2">
@@ -37,34 +24,10 @@
                     <a class="nav-link" href="/articles_folder">Статті<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <span class="navbar-text mr-5">валюта: 0</span>
             <span class="navbar-text mr-5">
                 user: <span th:text="${loginUser}"/>
             </span>
         </nav>
     </header>
-
-
-    <!-- begin OPEN modal form -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Upload Data Base</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- HERE MUST BE ERRORS (in future) -->
-                    <input class="mb-3" type="file" id="fileUpload" accept=".sqlite,.db,.cash"/><br/>
-                </div>
-                <div class="modal-footer text-center">
-                    <button type="submit" class="btn btn-info" id="submit" data-dismiss="modal">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end OPEN modal form -->
 
 </div>

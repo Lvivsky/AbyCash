@@ -16,13 +16,13 @@ public class Accounts {
     private boolean deleted;
 
     private String name;
-    private double startingbalance;
+    private long startingbalance;
     private int currency;
     private String comment;
     private boolean locked;
 
     public Accounts() {}
-    public Accounts(String name, double startingbalance, int currency, String comment, boolean locked) {
+    public Accounts(String name, long startingbalance, int currency, String comment, boolean locked) {
         this.guid = UUID.randomUUID();
         this.changed = Instant.now().getEpochSecond();
         this.deleted = false;
@@ -73,11 +73,11 @@ public class Accounts {
         this.name = name;
     }
 
-    public double getStartingbalance() {
+    public long getStartingbalance() {
         return startingbalance;
     }
 
-    public void setStartingbalance(double startingbalance) {
+    public void setStartingbalance(long startingbalance) {
         this.startingbalance = startingbalance;
     }
 

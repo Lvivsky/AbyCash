@@ -39,19 +39,19 @@
     <table class="table table-sm table-bordered table-striped">
         <thead>
             <tr>
-                <th>Назва рахунку</th>
+                <th style="width:30%">Назва рахунку</th>
                 <th>Залишок</th>
-                <th>Валюта</th>
+                <th style="width:1%">Валюта</th>
                 <th>опис</th>
-                <th style="width:1%"></th>       <!--     // lock would be here -->
-                <th style="width:1%"></th>     <!--                        -->
+                <th style="width:1%"></th>
+                <th style="width:1%"></th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="element : ${accounts}">
                 <td th:text="${element.name}"/>
                 <td th:text="${element.startingbalance}"/>
-                <td th:text="${element.currency}"/>
+                <td class="text-center" th:text="${element.currency}"/>
                 <td th:text="${element.comment}"/>
                 <td>
                     <a class="btn btn-warning btn-sm" th:href="'/accounts_folder/' + ${element.id} + '/edit'">редагувати</a>

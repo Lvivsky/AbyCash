@@ -37,7 +37,6 @@ public class OperationFolderController {
         transactions.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
 
         try {
-
             List<Transactions> list = (ArrayList)transactionsRepo.findAll();
             list.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
             List<OperationTransaction> operationTransaction = new ArrayList<>();
@@ -64,14 +63,11 @@ public class OperationFolderController {
                         categories != null ? categories.getName() : null,
                         e.getComment()));
             }
-
             model.addAttribute("operations", operationTransaction);
         } catch (Exception e) {
             System.out.println("шось тут не так!!!  " + e.getMessage());
             e.printStackTrace();
         }
-
-
 
         return "operation_folder";
     }
@@ -102,6 +98,7 @@ public class OperationFolderController {
                         "\nstate name = " + state_name +
                         "\ncomment = " + comment
         );
+        if (amount.isEmpty() || account_name.isEmpty()) return "redirect:/operation_folder";
 
         Accounts accounts = accountsRepo.findByName(account_name);
 
@@ -109,44 +106,33 @@ public class OperationFolderController {
             Transactions transactions;
             if (id == 1) {
                 transactions = new Transactions(
-                        String.valueOf(accounts.getId()),
-                        String.valueOf(amount),
-                        String.valueOf(accounts.getStartingbalance()),
-                        "",
-                        "",
-                        "",
-                        comment,
-                        "10000"
-                );
-
-
-                System.out.println("\n\n\n===== tr id = " + transactionsRepo.findLatestId() + "\n\n");
-
-                Transactioncategories transactioncategories
-                        = new Transactioncategories(
-                        categoriesRepo.findByName(state_name).getId(),
-                        transactionsRepo.findLatestId()
+                        String.valueOf(accounts.getId()), String.valueOf(amount),
+                        String.valueOf(accounts.getStartingbalance()), null, null, null,
+                        comment, "10000"
                 );
                 transactionsRepo.save(transactions);
+                Transactioncategories transactioncategories = new Transactioncategories(
+                        categoriesRepo.findByName(state_name).getId(), transactionsRepo.findLatestId()
+                );
                 transactionCategoriesRepo.save(transactioncategories);
             }
             else if (id == 2) {
                 transactions = new Transactions(
-                        "",
-                        "",
-                        "",
+                        null,
+                        null,
+                        null,
                         String.valueOf(accounts.getId()),
                         String.valueOf(amount),
                         String.valueOf(accounts.getStartingbalance()),
                         comment,
                         "10000"
                 );
+                transactionsRepo.save(transactions);
                 Transactioncategories transactioncategories
                         = new Transactioncategories(
                         categoriesRepo.findByName(state_name).getId(),
                         transactionsRepo.findLatestId()
                 );
-                transactionsRepo.save(transactions);
                 transactionCategoriesRepo.save(transactioncategories);
             }
         }
