@@ -16,38 +16,47 @@
 <div class="container">
     <div class="card-group col-sm-13 mt-5">
         <div class="card">
-            <div class="card-body text-right">
+            <div class="card-body">
 
                 <h5 class="card-title">Курс валют</h5>
 
                 <div class="container row d-flex justify-content-center">
+
+
+
                     <div class="col-xs-6 ml-4">
                         <p class="mt-3">Валюта 1</p>
-                        <div class="dropdown mb-3">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
+                        <select name="currency" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                            <div th:each="e : ${currencies}" >
+                                <option><span th:text="${e.code}"/></option>
                             </div>
-                        </div>
+                        </select>
                     </div>
+
+
 
                     <div class="col-xs-6 ml-4">
                         <p class="mt-3">Валюта 2</p>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
+                        <select name="currency" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                            <div th:each="e : ${currencies}" >
+                                <option><span th:text="${e.code}"/></option>
                             </div>
-                        </div>
+                        </select>
                     </div>
+
+
+
+                </div>
+                <div class="container mt-5 row d-flex justify-content-center">
+
+                        <span>
+                            val1
+                        </span>
+                    <p class="ml-3 mr-3">:</p>
+                        <span>
+                            val2
+                        </span>
+
                 </div>
             </div>
         </div>
