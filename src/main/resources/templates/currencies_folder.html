@@ -72,25 +72,25 @@
                         <tr>
                             <th style="width:20%">Значення</th>
                             <th>Назва валюти</th>
-                            <th style="width:1%"></th>
+<!--                            <th style="width:1%"></th>-->
                         </tr>
                         </thead>
                         <tbody>
                         <tr th:each="element : ${currencies}">
                             <td th:text="${element.code}"/>
                             <td th:text="${element.name}"/>
-                            <td>
-                                <form method="post">
-                                    <button class="btn-danger btn-sm" type="submit">видалити</button>
-                                </form>
-                            </td>
+<!--                            <td>-->
+<!--                                <form method="post">-->
+<!--                                    <button class="btn-danger btn-sm" type="submit">видалити</button>-->
+<!--                                </form>-->
+<!--                            </td>-->
                         </tr>
                         </tbody>
                     </table>
 
-                    <form>
-                        <button class="btn btn-success">додати</button>
-                    </form>
+<!--                    <form>-->
+<!--                        <button class="btn btn-success">додати</button>-->
+<!--                    </form>-->
                 </div>
             </div>
         </div>

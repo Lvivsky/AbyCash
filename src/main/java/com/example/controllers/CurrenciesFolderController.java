@@ -53,8 +53,8 @@ public class CurrenciesFolderController {
                 model.addAttribute("curr1", curr1);
                 model.addAttribute("curr2", curr2);
 
-                model.addAttribute("rate1", rate1);
-                model.addAttribute("rate2", rate2);
+                model.addAttribute("rate1", Double.valueOf(rate1)/Double.valueOf(rate2));
+                model.addAttribute("rate2", Double.valueOf(rate2)/Double.valueOf(rate2));
             }
 
         } catch (Exception e) {
