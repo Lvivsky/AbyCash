@@ -46,8 +46,19 @@
                 <tr th:each="e : ${operations}">
                     <td th:text="${e.date}"/>
 
-                    <td th:text="${e.account}"/>
-                    <td class="text-danger text-right" th:text="${e.amount}"/>
+                    <div th:if="${#strings.startsWith(e.amount,'-')}">
+                        <td th:text="${e.account}"/>
+                        <td class="text-danger text-right" th:text="${e.amount}"/>
+                    </div>
+
+                    <div th:unless="${#strings.startsWith(e.amount,'-')}">
+                        <td th:text="${e.account}"/>
+                        <td class="text-success text-left" th:text="${e.amount}"/>
+
+                    </div>
+
+<!--                    <td th:text="${e.account}"/>-->
+<!--                    <td class="text-danger text-right" th:text="${e.amount}"/>-->
 
                     <td class="text-center" th:text="${e.currency}"/>
                     <td th:text="${e.state}"/>

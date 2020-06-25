@@ -33,11 +33,11 @@ public class OperationFolderController {
     public String getMainTable(Model model) {
         model.addAttribute("loginUser", usersRepo.findById(1).get().getLogin());
 
-        List<Transactions> transactions = (ArrayList)transactionsRepo.findAll();
+        List<Transactions> transactions = transactionsRepo.findAll();
         transactions.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
 
         try {
-            List<Transactions> list = (ArrayList)transactionsRepo.findAll();
+            List<Transactions> list = transactionsRepo.findAll();
             list.sort(Comparator.comparing(Transactions::getSortedByDate).reversed());
             List<OperationTransaction> operationTransaction = new ArrayList<>();
 
@@ -59,10 +59,12 @@ public class OperationFolderController {
                 List<Accounts> res = new ArrayList<Accounts>();
                 accounts.ifPresent(res::add);
 
+                String amountToDisplay = formatAmountToDisplay(e);
+
                 operationTransaction.add( new OperationTransaction(
                         e.getBudgetdate(),
                         accounts.get().getName(),
-                        e.getIncomeamount() != null ? e.getIncomeamount() : e.getExpenseamount(),
+                        amountToDisplay,
                         currenciesRepo.findById(Integer.valueOf(accounts.get().getCurrency())).get().getCode(),
                         categories != null ? categories.getName() : null,
                         e.getComment()));
@@ -145,5 +147,22 @@ public class OperationFolderController {
             e.printStackTrace();
         }
         return "redirect:/operation_folder";
+    }
+
+    private String formatAmountToDisplay(Transactions transactions) {
+        String income = transactions.getIncomeamount();
+        if (income != null) {
+            return income.replace("-", "");
+        }
+        String expanse = transactions.getExpenseamount();
+        String minus = "-";
+        if (expanse != null) {
+            if (expanse.startsWith("-")) {
+                return expanse;
+            } else {
+                return minus.concat(expanse);
+            }
+        }
+         return "0";
     }
 }
