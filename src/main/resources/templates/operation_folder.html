@@ -21,6 +21,7 @@
                 <h3>Додати</h3>
                 <a class="btn btn-success text-white ml-1" href="/operation_folder/1/add">Дохід</a>
                 <a class="btn btn-success text-white ml-1" href="/operation_folder/2/add">Витрата</a>
+                <a class="btn btn-success text-white ml-1" href="/operation_folder/changing">Переказ</a>
 
             </div>
         </div>
@@ -33,7 +34,8 @@
             <tr>
                 <th style="width:1%" class="text-center">Дата</th>
                 <th>Рахунок</th>
-                <th style="width:10%">дохід/витрата</th>
+                <th style="width:10%">Дохід/Витрата</th>
+                <th>Залишок</th>
 
                 <th style="width:1%" class="text-center">Валюта</th>
 
@@ -57,8 +59,7 @@
 
                     </div>
 
-<!--                    <td th:text="${e.account}"/>-->
-<!--                    <td class="text-danger text-right" th:text="${e.amount}"/>-->
+                    <td th:text="${e.balance}"/>
 
                     <td class="text-center" th:text="${e.currency}"/>
                     <td th:text="${e.state}"/>

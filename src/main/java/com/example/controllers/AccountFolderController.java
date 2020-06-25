@@ -3,6 +3,7 @@ package com.example.controllers;
 import com.example.models.dbmodels.Accounts;
 import com.example.models.dbmodels.Currencies;
 import com.example.models.dbmodels.Transactions;
+import com.example.models.nmodel.AccountRefactor;
 import com.example.repositories.AccountsRepo;
 import com.example.repositories.CurrenciesRepo;
 import com.example.repositories.TransactionsRepo;
@@ -88,9 +89,24 @@ public class AccountFolderController {
                 account.setStartingbalance(account.getStartingbalance() + incomeTotal + expenseTotal);
             });
 
-            model.addAttribute("accounts", accounts);
+            List <AccountRefactor> accountRefactors = new ArrayList<>();
 
+            for (Accounts a: accounts) {
+                accountRefactors.add(new AccountRefactor(
 
+                        a.getId(),
+                        a.getGuid(),
+                        a.getChanged(),
+                        a.isDeleted(),
+                        a.getName(),
+                        a.getStartingbalance(),
+                        currenciesRepo.findById(a.getCurrency()).get().getCode(),
+                        a.getComment(),
+                        a.isLocked()
+                ));
+            }
+
+            model.addAttribute("accounts", accountRefactors);
         } catch (Exception e) {
             System.out.println("шось не так! " + e.getMessage());
             e.printStackTrace();

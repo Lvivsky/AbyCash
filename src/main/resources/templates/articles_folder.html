@@ -30,17 +30,17 @@
                 <td th:text="${element.name}"/>
                 <td th:text="${element.comment}"/>
                 <td>
-                    <a class="btn btn-warning btn-sm" th:href="'/articles_folder/' + ${element.id} + '/edit'">редагувати</a>
+                    <a class="btn btn-warning btn-sm" th:href="'/articles_folder/' + ${element.id} + '/edit'">Редагувати</a>
                 </td>
                 <td>
                     <form th:action="'/articles_folder/' + ${element.id} + '/delete'" method="post">
-                        <button class="btn-danger btn-sm" type="submit" style="text-align:center;">видалити</button>
+                        <button class="btn-danger btn-sm" type="submit" style="text-align:center;">Видалити</button>
                     </form>
                 </td>
             </tr>
             </tbody>
         </table>
-        <a class="btn-sm btn-success font-weight-light ml-5" style="font-size:14px" href="/articles_folder/1/add">додати категорію</a>
+        <a class="btn-sm btn-success font-weight-light ml-5" style="font-size:14px" href="/articles_folder/1/add">Додати категорію</a>
     </form>
     <form>
         <h5 class="mt-5">Всі статті витрат</h5>
@@ -57,16 +57,16 @@
             <tr th:each="element : ${outcomeCategory}">
                 <td th:text="${element.name}"/>
                 <td th:text="${element.comment}"/>
-                <td><a class="btn btn-warning btn-sm" th:href="'/articles_folder/' + ${element.id} + '/edit'">редагувати</a></td>
+                <td><a class="btn btn-warning btn-sm" th:href="'/articles_folder/' + ${element.id} + '/edit'">Редагувати</a></td>
                 <td>
                     <form th:action="'/articles_folder/' + ${element.id} + '/delete'" method="post">
-                        <button class="btn-danger btn-sm" type="submit">видалити</button>
+                        <button class="btn-danger btn-sm" type="submit">Видалити</button>
                     </form>
                 </td>
             </tr>
             </tbody>
         </table>
-        <a class="btn-sm btn-success font-weight-light ml-5" style="font-size:14px" href="/articles_folder/2/add">додати категорію</a>
+        <a class="btn-sm btn-success font-weight-light ml-5" style="font-size:14px" href="/articles_folder/2/add">Додати категорію</a>
     </form>
 </div>
 </div>

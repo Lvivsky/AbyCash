@@ -9,15 +9,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 public class OperationFolderController {
@@ -65,6 +64,9 @@ public class OperationFolderController {
                         e.getBudgetdate(),
                         accounts.get().getName(),
                         amountToDisplay,
+
+                        e.getIncomebalance()==null || e.getIncomeaccount().isEmpty() ? e.getExpensebalance() : e.getIncomebalance(),
+
                         currenciesRepo.findById(Integer.valueOf(accounts.get().getCurrency())).get().getCode(),
                         categories != null ? categories.getName() : null,
                         e.getComment()));
@@ -165,4 +167,31 @@ public class OperationFolderController {
         }
          return "0";
     }
+
+    @GetMapping("operation_folder/changing")
+    public String addChanging(Model model) {
+        model.addAttribute("all_accounts", accountsRepo.findAllUnlocked());
+        return "/fragments/addOperationChanging";
+    }
+
+    @PostMapping("operation_folder/changing")
+    public String addChangingPost(
+            @RequestParam String account_name1,
+            @RequestParam String account_name2,
+            @RequestParam String amount,
+            @RequestParam String comment,
+            Model model) {
+        if (amount.isEmpty())
+            return "redirect:/operation_folder";
+        try {
+            addTransactionPost(2, account_name1, amount, "Переказ у " + account_name2, comment, model);
+            addTransactionPost(1, account_name2, amount, "Переказ із " + account_name1, comment, model);
+        } catch (Exception e) {
+            System.out.println("Щось не так! " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return "redirect:/operation_folder";
+    }
+
 }

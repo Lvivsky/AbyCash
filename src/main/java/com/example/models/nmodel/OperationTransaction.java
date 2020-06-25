@@ -3,8 +3,10 @@ package com.example.models.nmodel;
 public class OperationTransaction {
 
     private String date;
+
     private String account;
     private String amount;
+    private String balance;
 
     private String currency;
     private String state;
@@ -13,11 +15,12 @@ public class OperationTransaction {
     public OperationTransaction() {}
 
     public OperationTransaction(String date,
-                                String accountIncome, String amountIncome,
+                                String accountIncome, String amountIncome, String balance,
                                 String currency, String state, String comment) {
         this.date = date;
         this.account = accountIncome;
         this.amount = amountIncome;
+        this.balance = balance;
         this.currency = currency;
         this.state = state;
         this.comment = comment;
@@ -28,6 +31,7 @@ public class OperationTransaction {
         return "Date: = " + this.date +
                 "\nAccountIn = " + this.account +
                 "\namountIn = " + this.amount +
+                "\nBalance = " + this.balance +
                 "\nCurrency = " + this.currency +
                 "\nState = " + this.state +
                 "\nComment = " + this.comment +
@@ -81,5 +85,13 @@ public class OperationTransaction {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getBalance() {
+        return balance;
+    }
+
+    public void setBalance(String balance) {
+        this.balance = balance;
     }
 }
