@@ -43,14 +43,20 @@ public class OperationFolderController {
 
 
             for (Transactions e: list) {
+                if (!accountsRepo.findById(Integer.valueOf(e.getIncomeaccount())).isPresent() ||
+                        !accountsRepo.findById(Integer.valueOf(e.getExpenseaccount())).isPresent())
+                        continue;
+
                 List<Transactioncategories> allByTransaction = transactionCategoriesRepo.findAllByTransaction(e.getId());
                 Categories categories = null;
                 if (!CollectionUtils.isEmpty(allByTransaction)) {
                     categories = categoriesRepo.findById(Integer.valueOf(allByTransaction.get(0).getCategory())).orElse(null);
                 }
 
-                String i = e.getIncomeaccount() != null ? e.getIncomeaccount() : e.getExpenseaccount();
 
+
+
+                String i = e.getIncomeaccount() != null ? e.getIncomeaccount() : e.getExpenseaccount();
                 Optional<Accounts> accounts = accountsRepo.findById(Integer.valueOf(i));
                 List<Accounts> res = new ArrayList<Accounts>();
                 accounts.ifPresent(res::add);
