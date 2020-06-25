@@ -28,6 +28,8 @@ public class CurrenciesFolderController {
         try {
             Iterable<Currencies> currencies = currenciesRepo.findAll();
             model.addAttribute("currencies", currencies);
+            model.addAttribute("curr1", null);
+            model.addAttribute("curr2", null);
         } catch (Exception e) {
             System.out.println("шось не так! " + e.getMessage());
         }
@@ -50,11 +52,11 @@ public class CurrenciesFolderController {
         Optional<CurrencyRates> currencyRates = currenciesRatesRepo.findByValues(currency1.getId(), currency2.getId());
         if (!currencyRates.isPresent())
         {
-            model.addAttribute("curr-value1", "NONE");
-            model.addAttribute("curr-value2", "NONE");
+            model.addAttribute("curr1", "NONE");
+            model.addAttribute("curr2", "NONE");
         } else {
-            model.addAttribute("curr-value1", currencyRates.get().getValue1());
-            model.addAttribute("curr-value2", currencyRates.get().getValue2());
+            model.addAttribute("curr1", currencyRates.get().getValue1());
+            model.addAttribute("curr2", currencyRates.get().getValue2());
         }
 
         return "redirect:/currencies_folder";

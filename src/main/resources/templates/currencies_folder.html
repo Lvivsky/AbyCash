@@ -51,15 +51,15 @@
 
                 <div class="container mt-5 row d-flex justify-content-center">
 
-                    <div th:if="${curr-value1} == null">
+                    <div th:if="${curr1} == null">
                         <span class="ml-4" th:text="'none'"/>
                         <p class="ml-3 mr-3">:</p>
                         <span th:text="'none'"/>
                     </div>
-                    <div th:unless="${curr-value1} == null">
-                        <span class="ml-4" th:text="${curr-value1}"/>
+                    <div th:unless="${curr1} == null">
+                        <span class="ml-4" th:text="${curr1}"/>
                         <p class="ml-3 mr-3">:</p>
-                        <span th:text="${curr-value2}"/>
+                        <span th:text="${curr2}"/>
                     </div>
 
                 </div>
