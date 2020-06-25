@@ -2,19 +2,27 @@ package com.example.controllers;
 
 import com.example.models.dbmodels.Accounts;
 import com.example.models.dbmodels.Currencies;
+import com.example.models.dbmodels.Transactions;
 import com.example.repositories.AccountsRepo;
 import com.example.repositories.CurrenciesRepo;
+import com.example.repositories.TransactionsRepo;
 import com.example.repositories.UsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 public class AccountFolderController {
@@ -28,6 +36,9 @@ public class AccountFolderController {
     @Autowired
     private CurrenciesRepo currenciesRepo;
 
+    @Autowired
+    private TransactionsRepo transactionsRepo;
+
     @GetMapping("/accounts_folder")
     public String index(Model model) {
         model.addAttribute("loginUser", usersRepo.findById(1).get().getLogin());
@@ -35,9 +46,48 @@ public class AccountFolderController {
         Iterable<Currencies> currencies = currenciesRepo.findAll();
         model.addAttribute("currencies", currencies);
         try {
+            List<Transactions> transactions = transactionsRepo.findAll();
+            Map<String, List<Transactions>> incomeAccountMap = transactions.stream()
+                .filter(t -> !StringUtils.isEmpty(t.getIncomeaccount()))
+                .filter(t -> !StringUtils.isEmpty(t.getIncomeamount()))
+                .collect(Collectors.groupingBy(Transactions::getIncomeaccount));
 
+            Map<String, List<Transactions>> expenseAccountMap = transactions.stream()
+                .filter(t -> !StringUtils.isEmpty(t.getExpenseaccount()))
+                .filter(t -> !StringUtils.isEmpty(t.getExpenseamount()))
+                .collect(Collectors.groupingBy(Transactions::getExpenseaccount));
 
-            Iterable<Accounts> accounts = accountsRepo.findAll();
+            List<Accounts> accounts = accountsRepo.findAll();
+            accounts.forEach(account -> {
+                Long expenseTotal = 0l;
+                if (!CollectionUtils.isEmpty(expenseAccountMap.get(String.valueOf(account.getId())))) {
+                    expenseTotal = expenseAccountMap.get(String.valueOf(account.getId())).stream()
+                        .map(expenseAccount -> {
+                            Long expense = new Long(expenseAccount.getExpenseamount());
+                            if (expense > 0) {
+                                expense = 0 - expense;
+                            }
+                            return expense;
+                        })
+                        .reduce(0l, (a, b) -> a + b);
+                }
+
+                Long incomeTotal = 0l;
+                if (!CollectionUtils.isEmpty(incomeAccountMap.get(String.valueOf(account.getId())))) {
+                    incomeTotal = incomeAccountMap.get(String.valueOf(account.getId())).stream()
+                        .map(incomeAccount -> {
+                            Long income = new Long(incomeAccount.getIncomeamount());
+                            if (income < 0) {
+                                income = 0 - income;
+                            }
+                            return income;
+                        })
+                        .reduce(0l, (a, b) -> a + b);
+                }
+
+                account.setStartingbalance(account.getStartingbalance() + incomeTotal + expenseTotal);
+            });
+
             model.addAttribute("accounts", accounts);
 
 
