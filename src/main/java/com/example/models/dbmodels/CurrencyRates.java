@@ -13,7 +13,7 @@ public class CurrencyRates {
     private String changed;
     private String deleted;
 
-    private String rateDate;
+    private String ratedate;
     private String currency1;
     private String currency2;
     private String value1;
@@ -51,12 +51,12 @@ public class CurrencyRates {
         this.deleted = deleted;
     }
 
-    public String getRateDate() {
-        return rateDate;
+    public String getRatedate() {
+        return ratedate;
     }
 
-    public void setRateDate(String rateDate) {
-        this.rateDate = rateDate;
+    public void setRatedate(String rateDate) {
+        this.ratedate = rateDate;
     }
 
     public String getCurrency1() {
