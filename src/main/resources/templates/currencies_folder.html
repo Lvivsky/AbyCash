@@ -20,42 +20,47 @@
 
                 <h5 class="card-title">Курс валют</h5>
 
-                <div class="container row d-flex justify-content-center">
 
+                <form action="/currencies_folder/change" method="post">
+                    <div class="container row d-flex justify-content-center">
+                        <div class="col-xs-6 ml-4">
+                            <p class="mt-3">Валюта 1</p>
+                            <select name="curr1" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                                <div th:each="e : ${currencies}" >
+                                    <option><span th:text="${e.code}"/></option>
+                                </div>
+                            </select>
+                        </div>
 
+                        <div class="col-xs-6 ml-4">
+                            <p class="mt-3">Валюта 2</p>
+                            <select name="curr2" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
+                                <div th:each="e : ${currencies}" >
+                                    <option><span th:text="${e.code}"/></option>
+                                </div>
+                            </select>
+                        </div>
 
-                    <div class="col-xs-6 ml-4">
-                        <p class="mt-3">Валюта 1</p>
-                        <select name="currency" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
-                            <div th:each="e : ${currencies}" >
-                                <option><span th:text="${e.code}"/></option>
-                            </div>
-                        </select>
+                    </div>
+                    <div class="container d-flex justify-content-center ">
+                        <button type="submit" class="btn btn-success btn-sm mt-4">Показати</button>
                     </div>
 
 
+                </form>
 
-                    <div class="col-xs-6 ml-4">
-                        <p class="mt-3">Валюта 2</p>
-                        <select name="currency" class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control is-valid">
-                            <div th:each="e : ${currencies}" >
-                                <option><span th:text="${e.code}"/></option>
-                            </div>
-                        </select>
-                    </div>
-
-
-
-                </div>
                 <div class="container mt-5 row d-flex justify-content-center">
 
-                        <span>
-                            val1
-                        </span>
-                    <p class="ml-3 mr-3">:</p>
-                        <span>
-                            val2
-                        </span>
+                    <div th:if="${curr-value1} == null">
+                        <span class="ml-4" th:text="'none'"/>
+                        <p class="ml-3 mr-3">:</p>
+                        <span th:text="'none'"/>
+                    </div>
+                    <div th:unless="${curr-value1} == null">
+                        <span class="ml-4" th:text="${curr-value1}"/>
+                        <p class="ml-3 mr-3">:</p>
+                        <span th:text="${curr-value2}"/>
+                    </div>
 
                 </div>
             </div>

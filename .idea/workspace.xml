@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6d2aef-d9d1-41d6-ac22-3c24c0fafaa2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repositories/CurrenciesRatesRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DefaultDataBase.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DefaultDataBase.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/CurrenciesFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/CurrenciesFolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controllers/OperationFolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controllers/OperationFolderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/currencies_folder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/currencies_folder.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -89,15 +88,15 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GitHub\real\AbyCash\src\main\java\com\example\dialect" />
+      <recent name="G:\GitHub\real\AbyCash\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\GitHub\real\AbyCash\src\main\resources\templates" />
       <recent name="G:\GitHub\real\AbyCash\src\main\resources\data" />
       <recent name="G:\GitHub\real\AbyCash\src\main\resources\data\css" />
       <recent name="G:\GitHub\javaa\AbyCash\AbyCash\src\main\resources\templates" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\GitHub\real\AbyCash\src\main\java\com\example\dialect" />
-      <recent name="G:\GitHub\real\AbyCash\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Application">
@@ -293,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593073580628</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="account and operations done">
+      <created>1593077782548</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1593077782548</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -337,7 +343,8 @@
     <MESSAGE value="group exception" />
     <MESSAGE value="new exceptions" />
     <MESSAGE value="fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs" />
+    <MESSAGE value="account and operations done" />
+    <option name="LAST_COMMIT_MESSAGE" value="account and operations done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="9" width="816" height="729" key="#Intentions" timestamp="1592741177583">
@@ -368,10 +375,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1592650680838" />
-    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1593073578271">
+    <state x="261" y="0" key="CommitChangelistDialog2" timestamp="1593077780123">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1593073578271" />
+    <state x="261" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1593077780123" />
     <state x="1807" y="-300" key="CommitChangelistDialog2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934106" />
     <state x="1620" y="-274" key="DiffContextDialog" timestamp="1592688986246">
       <screen x="1440" y="-300" width="1920" height="1200" />
@@ -381,28 +388,28 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1592501289436" />
-    <state width="1323" height="183" key="GridCell.Tab.0.bottom" timestamp="1593077656775">
+    <state width="1323" height="31" key="GridCell.Tab.0.bottom" timestamp="1593079823930">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593077656775" />
+    <state width="1323" height="31" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593079823930" />
     <state width="1878" height="441" key="GridCell.Tab.0.bottom/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934174" />
     <state width="1878" height="466" key="GridCell.Tab.0.bottom/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772623" />
-    <state width="1323" height="183" key="GridCell.Tab.0.center" timestamp="1593077656775">
+    <state width="1323" height="31" key="GridCell.Tab.0.center" timestamp="1593079823930">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593077656775" />
+    <state width="1323" height="31" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593079823930" />
     <state width="1878" height="441" key="GridCell.Tab.0.center/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934171" />
     <state width="1878" height="466" key="GridCell.Tab.0.center/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772619" />
-    <state width="1323" height="183" key="GridCell.Tab.0.left" timestamp="1593077656775">
+    <state width="1323" height="31" key="GridCell.Tab.0.left" timestamp="1593079823930">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593077656775" />
+    <state width="1323" height="31" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593079823930" />
     <state width="1878" height="441" key="GridCell.Tab.0.left/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934169" />
     <state width="1878" height="466" key="GridCell.Tab.0.left/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772617" />
-    <state width="1323" height="183" key="GridCell.Tab.0.right" timestamp="1593077656775">
+    <state width="1323" height="31" key="GridCell.Tab.0.right" timestamp="1593079823930">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="183" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593077656775" />
+    <state width="1323" height="31" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593079823930" />
     <state width="1878" height="441" key="GridCell.Tab.0.right/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592691934173" />
     <state width="1878" height="466" key="GridCell.Tab.0.right/1440.-300.1920.1200/0.23.1440.802@1440.-300.1920.1200" timestamp="1592690772621" />
     <state width="1323" height="69" key="GridCell.Tab.1.bottom" timestamp="1593075888570">
@@ -442,10 +449,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1592953710803" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1593073582330">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1593077809851">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1593073582330" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1593077809851" />
     <state x="1827" y="-134" key="Vcs.Push.Dialog.v2/1440.-300.1920.1200/0.0.1440.900@1440.-300.1920.1200" timestamp="1592689591152" />
     <state x="544" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593077635509">
       <screen x="0" y="0" width="1366" height="738" />
@@ -460,10 +467,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1593021768977" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593007986885">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1593078772807">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593007986885" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1593078772807" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AbyCash$Application.ic" NAME="Application Coverage Results" MODIFIED="1593071333654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
