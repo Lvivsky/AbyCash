@@ -37,25 +37,25 @@ public class CurrenciesFolderController {
 
             //display currencies rates
 
-            // if currencies not defined - take 2 first in the list
             if (StringUtils.isEmpty(curr1) || StringUtils.isEmpty(curr2)) {
-                curr1 = currencies.get(0).getCode();
-                curr2 = currencies.get(1).getCode();
+                model.addAttribute("curr1", null);
+                model.addAttribute("curr2", null);
+            } else {
+
+                Currencies currency1 = currenciesRepo.findByCode(curr1);
+                Currencies currency2 = currenciesRepo.findByCode(curr2);
+
+                Optional<CurrencyRates> currencyRates = currenciesRatesRepo.findByValues(currency1.getId(), currency2.getId());
+
+                String rate1 = currencyRates.map(CurrencyRates::getValue1).orElse(null);
+                String rate2 = currencyRates.map(CurrencyRates::getValue2).orElse(null);
+
+                model.addAttribute("curr1", curr1);
+                model.addAttribute("curr2", curr2);
+
+                model.addAttribute("rate1", rate1);
+                model.addAttribute("rate2", rate2);
             }
-
-            Currencies currency1 = currenciesRepo.findByCode(curr1);
-            Currencies currency2 = currenciesRepo.findByCode(curr2);
-
-            Optional<CurrencyRates> currencyRates = currenciesRatesRepo.findByValues(currency1.getId(), currency2.getId());
-
-            String rate1 = currencyRates.map(CurrencyRates::getValue1).orElse(null);
-            String rate2 = currencyRates.map(CurrencyRates::getValue2).orElse(null);
-
-            model.addAttribute("curr1", curr1);
-            model.addAttribute("curr2", curr2);
-
-            model.addAttribute("rate1", rate1);
-            model.addAttribute("rate2", rate2);
 
         } catch (Exception e) {
             System.out.println("шось не так! " + e.getMessage());
