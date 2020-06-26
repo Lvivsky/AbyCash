@@ -48,9 +48,6 @@ public class OperationFolderController {
                     categories = categoriesRepo.findById(Integer.valueOf(allByTransaction.get(0).getCategory())).orElse(null);
                 }
 
-
-
-
                 String i = e.getIncomeaccount() != null ? e.getIncomeaccount() : e.getExpenseaccount();
                 Optional<Accounts> accounts = accountsRepo.findById(Integer.valueOf(i.replace("\n", "")));
                 if (!accounts.isPresent())
@@ -113,25 +110,34 @@ public class OperationFolderController {
         try {
             Transactions transactions;
             if (id == 1) {
+                Long remainingBalance = accounts.getStartingbalance() + Long.parseLong(amount);
                 transactions = new Transactions(
-                        String.valueOf(accounts.getId()), String.valueOf(amount),
-                        String.valueOf(accounts.getStartingbalance()), null, null, null,
-                        comment, "10000"
+                    String.valueOf(accounts.getId()),
+                    amount,
+                    remainingBalance.toString(),
+                    null,
+                    null,
+                    null,
+                    comment,
+                    "10000"
                 );
                 transactionsRepo.save(transactions);
                 Transactioncategories transactioncategories = new Transactioncategories(
                         categoriesRepo.findByName(state_name).getId(), transactionsRepo.findLatestId()
                 );
                 transactionCategoriesRepo.save(transactioncategories);
+                accounts.setStartingbalance(remainingBalance);
+                accountsRepo.save(accounts);
             }
             else if (id == 2) {
+                Long remainingBalance = accounts.getStartingbalance() - Long.parseLong(amount);
                 transactions = new Transactions(
                         null,
                         null,
                         null,
                         String.valueOf(accounts.getId()),
                         String.valueOf(amount),
-                        String.valueOf(accounts.getStartingbalance()),
+                        remainingBalance.toString(),
                         comment,
                         "10000"
                 );
@@ -142,6 +148,8 @@ public class OperationFolderController {
                         transactionsRepo.findLatestId()
                 );
                 transactionCategoriesRepo.save(transactioncategories);
+                accounts.setStartingbalance(remainingBalance);
+                accountsRepo.save(accounts);
             }
         }
         catch (Exception e) {
@@ -184,8 +192,8 @@ public class OperationFolderController {
         if (amount.isEmpty())
             return "redirect:/operation_folder";
         try {
-            addTransactionPost(2, account_name1, amount, "Переказ у " + account_name2, comment, model);
-            addTransactionPost(1, account_name2, amount, "Переказ із " + account_name1, comment, model);
+            addTransactionPost(2, account_name1, amount, "Витрата (переказ)", "Переказ у '" + account_name2 + "'. " + comment, model);
+            addTransactionPost(1, account_name2, amount, "Дохід (переказ)", "Переказ із '" + account_name1 + "'. " + comment, model);
         } catch (Exception e) {
             System.out.println("Щось не так! " + e.getMessage());
             e.printStackTrace();
@@ -193,5 +201,4 @@ public class OperationFolderController {
 
         return "redirect:/operation_folder";
     }
-
 }
